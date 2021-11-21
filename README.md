@@ -4,6 +4,16 @@ A Proof-of-Concept application to showcase the reactive approach of pushing
 data asynchronously to the UI.
 
 
+## Starting
+
+You will need `make`, `go`, and `yarn` to start the whole stack. Use `./makew`
+wrapper for make, as it has parallel execution set, needed for the dev servers
+to start simultaneously.
+
+Sync the dependencies with `./makew install`. Start the dev servers with
+`./makew dev`.
+
+
 ## The Why
 
 When searching for the optimal solution for pushing the data to the UI, I came

@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from "react";
 
 type EmptyObject = Record<string, never>;
 
@@ -8,7 +8,7 @@ type EmptyObject = Record<string, never>;
 export type DefaultChildren = ReactNode;
 
 /**
- * No props, a.k.a. () => </>, or ({ children }) => </> component
+ * No props, a.k.a. () => </> component
  */
 export type EmptyProps = EmptyObject;
 
