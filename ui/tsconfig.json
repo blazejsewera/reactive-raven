@@ -1,4 +1,6 @@
 {
+  "include": ["src", "type"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -15,6 +17,5 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
-  },
-  "include": ["./src"]
+  }
 }

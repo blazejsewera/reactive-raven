@@ -1,45 +1,26 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import * as React from 'react'
+import type { FC } from './type/react'
+import { intl } from './i18l/intl'
+import { cx } from './util/cx'
+import { full, fullWithImage, minimal, partial } from './mock/notification.mock'
+import { handlers as mockContainerHandlers } from './mock/notificationContainer.mock'
+import './style/main.css'
+import './style/inter.css'
+import { NotificationContainer } from './component/notification/container/NotificationContainer'
+import { ToggleDarkModeButton } from './component/button/ToggleDarkModeButton'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App: FC = () => {
+  const notifications = [full, fullWithImage, partial, minimal]
+  const [isDarkMode, setDarkMode] = React.useState(false)
+  const toggleDarkMode = () => setDarkMode(!isDarkMode)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className={cx('App', 'min-h-screen', isDarkMode ? 'dark' : '')}>
+      <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'p-10')}>
+        <NotificationContainer title="Tag title" {...{ notifications, handlers: mockContainerHandlers, intl }} />
+      </div>
+      <div className={cx('fixed', 'top-5', 'right-5')}>
+        <ToggleDarkModeButton onClick={toggleDarkMode} isDarkMode={isDarkMode} />
+      </div>
     </div>
   )
 }
-
-export default App
