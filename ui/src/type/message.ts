@@ -1,7 +1,7 @@
 export type Message = {
-  appName: string
+  username: string
   timestamp: string
-  appImgUri?: string
+  userImgUri?: string
   title: string
   subtitle?: string
   body?: string

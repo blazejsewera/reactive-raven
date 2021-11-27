@@ -14,7 +14,7 @@ export interface MessageCardProps {
 }
 
 export const MessageCard: FC<MessageCardProps> = ({ message, intl }) => {
-  const { appName, appImgUri, title, subtitle, body, timestamp } = message
+  const { username: appName, userImgUri: appImgUri, title, subtitle, body, timestamp } = message
 
   return (
     <div className={cx('rounded-3xl', 'bg-white', 'dark:bg-gray-800', 'w-80', 'p-5', 'shadow-lg', 'relative')}>
