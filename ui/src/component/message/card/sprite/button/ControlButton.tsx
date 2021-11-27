@@ -2,15 +2,11 @@ import * as React from 'react'
 import type { FC } from '../../../../../type/react'
 import type { Icon } from '../../../../../external/icon'
 import { cx } from '../../../../../util/cx'
-import type {
-  OnNotificationCardArchive,
-  OnNotificationCardCheck,
-  OnNotificationCardSettings,
-} from '../../../../../type/handler'
+import type { OnMessageCardArchive, OnMessageCardCheck, OnMessageCardSettings } from '../../../../../type/handler'
 
 export interface ControlButtonProps {
   SvgIcon: Icon
-  onClick: OnNotificationCardArchive | OnNotificationCardCheck | OnNotificationCardSettings
+  onClick: OnMessageCardArchive | OnMessageCardCheck | OnMessageCardSettings
 }
 
 export const ControlButton: FC<ControlButtonProps> = ({ SvgIcon, onClick }) => {
