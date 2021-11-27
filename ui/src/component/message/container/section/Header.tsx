@@ -13,6 +13,6 @@ export interface HeaderProps {
 export const Header: FC<HeaderProps> = ({ title, onClear }) => (
   <div className={cx('flex', 'mb-4', 'mx-2')}>
     <Title>{title}</Title>
-    <ClearButton onClick={onClear} />
+    <ClearButton onClick={onClear} containerTitle={title} />
   </div>
 )

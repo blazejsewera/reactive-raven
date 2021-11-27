@@ -6,7 +6,6 @@ import { full, fullWithImage, minimal, partial, anotherUser } from './mock/messa
 import { handlers as mockContainerHandlers } from './mock/messageContainer.mock'
 import './style/main.css'
 import './style/inter.css'
-import { MessageContainer } from './component/message/container/MessageContainer'
 import { ToggleDarkModeButton } from './component/button/ToggleDarkModeButton'
 import { MessageBoard } from './component/message/board/MessageBoard'
 
@@ -17,7 +16,7 @@ export const App: FC = () => {
   return (
     <div className={cx('App', 'min-h-screen', isDarkMode ? 'dark' : '')}>
       <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'py-12', 'px-8', 'min-w-max')}>
-        <MessageBoard messages={messages} intl={intl} />
+        <MessageBoard messages={messages} intl={intl} containerHandlers={mockContainerHandlers} />
       </div>
       <div className={cx('fixed', 'top-5', 'right-5')}>
         <ToggleDarkModeButton onClick={toggleDarkMode} isDarkMode={isDarkMode} />
