@@ -9,7 +9,7 @@ import type { MessageContainerHandlers } from '../../../../type/handler'
 describe('MessageContainer component', () => {
   // given
   const intl = intlMock
-  const handlers: MessageContainerHandlers = { onClearAll: jest.fn() }
+  const handlers: MessageContainerHandlers = { onClear: jest.fn() }
 
   const testMessageContainer = (messages: Message[]) => {
     const tree = render(<MessageContainer {...{ title: 'TestTitle', messages, intl, handlers }} />).toJSON()

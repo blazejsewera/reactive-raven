@@ -16,7 +16,7 @@ export const App: FC = () => {
   const toggleDarkMode = () => setDarkMode(!isDarkMode)
   return (
     <div className={cx('App', 'min-h-screen', isDarkMode ? 'dark' : '')}>
-      <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'p-10')}>
+      <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'py-12', 'px-8', 'min-w-max')}>
         <MessageBoard messages={messages} intl={intl} />
       </div>
       <div className={cx('fixed', 'top-5', 'right-5')}>

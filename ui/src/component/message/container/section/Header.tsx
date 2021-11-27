@@ -2,17 +2,17 @@ import * as React from 'react'
 import type { FC } from '../../../../type/react'
 import { Title } from '../text/Title'
 import { cx } from '../../../../util/cx'
-import { ClearAllButton } from '../sprite/button/ClearAllButton'
-import type { OnMessageContainerClearAll } from '../../../../type/handler'
+import { ClearButton } from '../sprite/button/ClearButton'
+import type { OnMessageContainerClear } from '../../../../type/handler'
 
 export interface HeaderProps {
   title: string
-  onClearAll: OnMessageContainerClearAll
+  onClear: OnMessageContainerClear
 }
 
-export const Header: FC<HeaderProps> = ({ title, onClearAll }) => (
+export const Header: FC<HeaderProps> = ({ title, onClear }) => (
   <div className={cx('flex', 'mb-4', 'mx-2')}>
     <Title>{title}</Title>
-    <ClearAllButton onClick={onClearAll} />
+    <ClearButton onClick={onClear} />
   </div>
 )

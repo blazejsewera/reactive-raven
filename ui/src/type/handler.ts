@@ -1,4 +1,4 @@
-export type OnMessageContainerClearAll = () => void
+export type OnMessageContainerClear = () => void
 export type MessageContainerHandlers = {
-  onClearAll: OnMessageContainerClearAll
+  onClear: OnMessageContainerClear
 }

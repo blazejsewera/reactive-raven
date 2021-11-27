@@ -2,6 +2,7 @@ import * as React from 'react'
 import type { Intl } from '../../../i18l/intl'
 import type { Message } from '../../../type/message'
 import type { FC } from '../../../type/react'
+import { cx } from '../../../util/cx'
 import { byUsername } from '../../../util/message/categorizer'
 import { MessageContainer } from '../container/MessageContainer'
 
@@ -18,9 +19,10 @@ export const MessageBoard: FC<MessageBoardProps> = ({ messages, intl }) => {
       title={username}
       messages={categorized[username]}
       intl={intl}
-      handlers={{ onClearAll: () => {} }}
+      handlers={{ onClear: () => {} }}
+      style={cx('inline-block')}
     />
   ))
 
-  return <div>{containers}</div>
+  return <div className={cx('inline-block space-x-4 whitespace-nowrap')}>{containers}</div>
 }

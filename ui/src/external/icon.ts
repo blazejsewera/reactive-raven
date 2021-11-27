@@ -3,4 +3,4 @@ import type { FC } from '../type/react'
 
 export type Icon = FC<IconProps>
 
-export { Archive, Check, CheckSquare, Moon, Settings, Sun } from 'react-feather'
+export { Archive, Check, Trash2 as Trash, Moon, Settings, Sun } from 'react-feather'
