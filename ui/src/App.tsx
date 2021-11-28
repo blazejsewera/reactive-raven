@@ -1,7 +1,6 @@
 import * as React from 'react'
 import type { FC } from './type/react'
 import { intl } from './i18l/intl'
-import { cx } from './util/cx'
 import { full, fullWithImage, minimal, partial, anotherUser } from './mock/message.mock'
 import { handlers as mockContainerHandlers } from './mock/messageContainer.mock'
 import './style/main.css'
