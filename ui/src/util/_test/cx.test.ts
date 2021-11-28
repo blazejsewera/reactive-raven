@@ -1,6 +1,6 @@
 import { cx } from '../cx'
 
-describe('tests for class names merge function', () => {
+describe('class names merge function', () => {
   it('returns empty string on no args', () => {
     const c = cx()
     expect(c).toEqual('')

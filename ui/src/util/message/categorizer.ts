@@ -17,9 +17,9 @@ type MessageCategorizer = (messages: Message[]) => Record<string, Message[]>
  */
 export const byUsername: MessageCategorizer = messages =>
   messages.reduce(
-    (categorized: Record<string, Message[]>, curr) => ({
+    (categorized: Record<string, Message[]>, current) => ({
       ...categorized,
-      [curr.username]: [...(categorized[curr.username] ?? []), curr],
+      [current.username]: [...(categorized[current.username] ?? []), current],
     }),
     {},
   )

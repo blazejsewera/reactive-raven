@@ -6,21 +6,26 @@ import { full, fullWithImage, minimal, partial, anotherUser } from './mock/messa
 import { handlers as mockContainerHandlers } from './mock/messageContainer.mock'
 import './style/main.css'
 import './style/inter.css'
-import { ToggleDarkModeButton } from './component/button/ToggleDarkModeButton'
-import { MessageBoard } from './component/message/board/MessageBoard'
+import { MessageBoardConnected as MessageBoard } from './component/message/board/MessageBoard'
+import { dispatch, store } from './store/store'
+import { T_SUCCESS } from './store/action/message/fetch'
+import { Provider } from 'react-redux'
+import { AppCanvasConnected as AppCanvas } from './component/canvas/AppCanvas'
+
+const propagateState = () => {
+  const messages = [full, fullWithImage, partial, minimal, anotherUser]
+
+  dispatch({ type: T_SUCCESS, messages })
+}
 
 export const App: FC = () => {
-  const messages = [full, fullWithImage, partial, minimal, anotherUser]
-  const [isDarkMode, setDarkMode] = React.useState(false)
-  const toggleDarkMode = () => setDarkMode(!isDarkMode)
+  propagateState()
+
   return (
-    <div className={cx('App', 'min-h-screen', isDarkMode ? 'dark' : '')}>
-      <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'py-12', 'px-8', 'min-w-max')}>
-        <MessageBoard messages={messages} intl={intl} containerHandlers={mockContainerHandlers} />
-      </div>
-      <div className={cx('fixed', 'top-5', 'right-5')}>
-        <ToggleDarkModeButton onClick={toggleDarkMode} isDarkMode={isDarkMode} />
-      </div>
-    </div>
+    <Provider store={store}>
+      <AppCanvas>
+        <MessageBoard intl={intl} containerHandlers={mockContainerHandlers} />
+      </AppCanvas>
+    </Provider>
   )
 }

@@ -1,7 +1,7 @@
 import type { Message } from '../../../type/message'
 import { byUsername } from '../categorizer'
 
-describe('tests for message categorizer', () => {
+describe('message categorizer', () => {
   // given
   const messages: Message[] = [
     { username: 'a', timestamp: '2021-11-27T20:00:00.000Z', title: 'a' },

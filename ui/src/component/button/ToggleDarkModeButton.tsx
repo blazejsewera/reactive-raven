@@ -1,7 +1,9 @@
 import * as React from 'react'
 import type { FC } from '../../type/react'
+import type { State } from '../../store/store'
 import { Moon, Sun } from '../../external/icon'
 import { cx } from '../../util/cx'
+import { connect } from 'react-redux'
 
 export interface ToggleDarkModeButtonProps {
   isDarkMode: boolean
@@ -16,3 +18,8 @@ export const ToggleDarkModeButton: FC<ToggleDarkModeButtonProps> = ({ isDarkMode
     </button>
   )
 }
+
+type StateMapper = (state: State) => Pick<ToggleDarkModeButtonProps, 'isDarkMode'>
+const mapState: StateMapper = state => ({ isDarkMode: state.isDarkMode })
+
+export const ToggleDarkModeButtonConnected = connect(mapState)(ToggleDarkModeButton)

@@ -1,3 +1,4 @@
+import { DarkmodeOff, DarkmodeOn, DarkmodeToggle } from './darkmode/toggle'
 import type {
   Request as MessagesFetchRequest,
   Success as MessagesFetchSuccess,
@@ -5,4 +6,11 @@ import type {
 } from './message/fetch'
 import { Push as MessagePush } from './message/push'
 
-export type Action = MessagesFetchRequest | MessagesFetchSuccess | MessagesFetchFail | MessagePush
+export type Action =
+  | MessagesFetchRequest
+  | MessagesFetchSuccess
+  | MessagesFetchFail
+  | MessagePush
+  | DarkmodeOn
+  | DarkmodeOff
+  | DarkmodeToggle

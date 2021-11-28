@@ -1,5 +1,7 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import type { Intl } from '../../../i18l/intl'
+import type { State } from '../../../store/store'
 import type { MessageContainerHandlers } from '../../../type/handler'
 import type { Message } from '../../../type/message'
 import type { FC } from '../../../type/react'
@@ -14,7 +16,7 @@ export interface MessageBoardProps {
 }
 
 export const MessageBoard: FC<MessageBoardProps> = ({ messages, intl, containerHandlers }) => {
-  const categorized = byUsername(messages)
+  const categorized = byUsername(messages) // PERF: possible room for optimization
   const usernames = Object.keys(categorized)
   const containers = usernames.map(username => (
     <MessageContainer
@@ -29,3 +31,10 @@ export const MessageBoard: FC<MessageBoardProps> = ({ messages, intl, containerH
 
   return <div className={cx('inline-block space-x-4 whitespace-nowrap')}>{containers}</div>
 }
+
+type StateMapper = (state: State) => Pick<MessageBoardProps, 'messages'>
+const mapState: StateMapper = state => ({
+  messages: state.messages,
+})
+
+export const MessageBoardConnected = connect(mapState)(MessageBoard)

@@ -57,14 +57,14 @@
     "prefix": "fcpc",
     "body": [
       "import * as React from 'react'",
-      "import type { FCPC } from '../../../../../../type/react' // adjust relative import",
+      "import type { FC } from '../../../../../../type/react' // adjust relative import",
       "",
       "export interface ${TM_FILENAME_BASE}Props {",
       "\t${2:prop: type}",
       "\tchildren: ${3:type}",
       "}",
       "",
-      "export const ${TM_FILENAME_BASE}: FCPC<${TM_FILENAME_BASE}Props> = (${1:props}) => (",
+      "export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (${1:props}) => (",
       "\t$0",
       ")"
     ],
