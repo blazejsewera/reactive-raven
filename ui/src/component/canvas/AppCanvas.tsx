@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from '../../store/action/darkmode/toggle'
 import { dispatch } from '../../store/store'
+import { actionDarkmodeOn, actionDarkmodeOff, actionDarkmodeToggle } from '../../store/action/action'
 import type { State } from '../../store/store'
 import type { FC } from '../../type/react'
 import { cx } from '../../util/cx'
@@ -35,13 +35,13 @@ export const AppCanvas: FC<AppCanvasProps> = ({ checkForDarkModePreference, isDa
 }
 
 const toggleDarkModeConnected = () => {
-  dispatch({ type: T_DARKMODE_TOGGLE })
+  dispatch(actionDarkmodeToggle())
 }
 
 const checkForDarkModePreferenceConnected = () => {
   window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? dispatch({ type: T_DARKMODE_ON })
-    : dispatch({ type: T_DARKMODE_OFF })
+    ? dispatch(actionDarkmodeOn())
+    : dispatch(actionDarkmodeOff())
 }
 
 type StateMapper = (

@@ -5,7 +5,7 @@ import type { Message } from '../type/message'
 import { T_FAIL, T_REQUEST, T_SUCCESS } from './action/message/fetch'
 import { T_PUSH } from './action/message/push'
 import { merge } from '../util/message/merger'
-import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from './action/darkmode/toggle'
+import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from './action/darkmode/set'
 
 export type State = {
   state: 'loading' | 'ok' | 'fail'
