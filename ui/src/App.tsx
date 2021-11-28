@@ -12,14 +12,16 @@ import { T_SUCCESS } from './store/action/message/fetch'
 import { Provider } from 'react-redux'
 import { AppCanvasConnected as AppCanvas } from './component/canvas/AppCanvas'
 
-const propagateState = () => {
+const _propagateState = () => {
   const messages = [full, fullWithImage, partial, minimal, anotherUser]
 
   dispatch({ type: T_SUCCESS, messages })
 }
 
 export const App: FC = () => {
-  propagateState()
+  React.useEffect(() => {
+    _propagateState() // run only once (for mocking)
+  }, [])
 
   return (
     <Provider store={store}>
