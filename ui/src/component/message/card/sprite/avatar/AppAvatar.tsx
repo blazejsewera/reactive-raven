@@ -5,7 +5,7 @@ import { ImgAppAvatar } from './ImgAppAvatar'
 import { InitialsAppAvatar } from './InitialsAppAvatar'
 
 export interface AppAvatarProps {
-  appName: string
+  username: string
   appImgUri?: string
   /**
    * @deprecated bgColor will be generated automatically from appName in the future,
@@ -15,7 +15,7 @@ export interface AppAvatarProps {
   size?: 'small' | 'medium' | 'large'
 }
 
-export const AppAvatar: FC<AppAvatarProps> = ({ appName, appImgUri, bgColor, size = 'medium' }) => {
+export const AppAvatar: FC<AppAvatarProps> = ({ username, appImgUri, bgColor, size = 'medium' }) => {
   const sizeClasses = {
     small: ['h-8', 'w-8'],
     medium: ['h-12', 'w-12'],
@@ -33,7 +33,7 @@ export const AppAvatar: FC<AppAvatarProps> = ({ appName, appImgUri, bgColor, siz
 
   return (
     <div className={cx(...sizeClasses, ...styleClasses)}>
-      <InitialsAppAvatar {...{ appName, bgColor }} />
+      <InitialsAppAvatar {...{ username, bgColor }} />
     </div>
   )
 }

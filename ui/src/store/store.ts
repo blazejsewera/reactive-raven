@@ -3,9 +3,11 @@ import type { Store } from 'redux'
 import type { Action } from './action/action'
 import type { Message } from '../type/message'
 import { T_FAIL, T_REQUEST, T_SUCCESS } from './action/message/fetch'
-import { T_PUSH } from './action/message/push'
+import { T_PUSH, T_PUSH_ERROR } from './action/message/push'
 import { merge } from '../util/message/merger'
 import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from './action/darkmode/set'
+import { T_UPDATE_TIME } from './action/message/time'
+import { updateTime } from '../util/message/time'
 
 export type State = {
   state: 'loading' | 'ok' | 'fail'
@@ -28,9 +30,15 @@ const reducer: Reducer = (previousState = defaultState, action) => {
     case T_SUCCESS:
       return { ...previousState, state: 'ok', messages: merge([...previousState.messages, ...action.messages]) } // PERF: possible room for optimization
     case T_FAIL:
+      console.warn(action.message)
       return { ...previousState, state: 'fail' }
     case T_PUSH:
       return { ...previousState, state: 'ok', messages: merge([...previousState.messages, action.message]) } // PERF: possible room for optimization
+    case T_PUSH_ERROR:
+      console.warn(action.message)
+      return { ...previousState, state: 'fail' }
+    case T_UPDATE_TIME:
+      return { ...previousState, messages: updateTime(previousState.messages) }
     case T_DARKMODE_ON:
       return { ...previousState, isDarkMode: true }
     case T_DARKMODE_OFF:

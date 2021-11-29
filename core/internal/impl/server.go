@@ -25,6 +25,20 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "home.html")
 }
 
+func serveMessages(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/messages" {
+		http.Error(w, "Not found", http.StatusNotFound)
+		return
+	}
+	if r.Method != "GET" {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	w.Header().Add("Access-Control-Allow-Origin", "*")
+	w.Header().Add("Content-Type", "application/json")
+	http.ServeFile(w, r, "mock_messages.json")
+}
+
 func Serve() {
 	flag.Parse()
 	hub := newHub()
@@ -33,6 +47,7 @@ func Serve() {
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(hub, w, r)
 	})
+	http.HandleFunc("/messages", serveMessages)
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

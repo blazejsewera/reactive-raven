@@ -1,4 +1,4 @@
-import { switchMap, catchError, map, from as observableFrom, of as observableOf } from 'rxjs'
+import { switchMap, catchError, map, observableFrom, observableOf } from '../../external/rxjs'
 import type { Observable } from 'rxjs'
 import type { Action } from '../../store/action/action'
 import type { ApiMessage } from '../../api/type/message'
@@ -6,8 +6,8 @@ import type { Message } from '../../type/message'
 import { actionFetchFail, actionFetchSuccess } from '../../store/action/action'
 import { fromFetch as observableFromFetch } from 'rxjs/fetch'
 
-const SERVER_ERROR_MSG = 'Server error when fetching messages'
-const NETWORK_ERROR_MSG = 'Network error when fetching messages'
+const SERVER_ERROR_MSG = 'Server error when fetching messages: '
+const NETWORK_ERROR_MSG = 'Error when fetching messages: '
 
 const toMessages = (payload: ApiMessage[]): Message[] =>
   payload.map(m => ({
@@ -30,7 +30,7 @@ export const handler: FetchHandler = requestUrl =>
   observableFromFetch(requestUrl).pipe(
     switchMap(
       (response): Observable<Action> =>
-        response.ok ? observableActionSuccess(response) : observableActionFail(SERVER_ERROR_MSG),
+        response.ok ? observableActionSuccess(response) : observableActionFail(SERVER_ERROR_MSG + response.status),
     ),
-    catchError((): Observable<Action> => observableActionFail(NETWORK_ERROR_MSG)),
+    catchError(err => observableActionFail(NETWORK_ERROR_MSG + err?.message)),
   )

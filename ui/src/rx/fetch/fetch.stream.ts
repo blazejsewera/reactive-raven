@@ -1,4 +1,4 @@
-import { mergeMap, of as observableOf } from 'rxjs'
+import { mergeMap, observableOf } from '../../external/rxjs'
 import { getApi } from '../../api/api'
 import type { FetchHandler } from './handler'
 

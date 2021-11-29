@@ -4,12 +4,13 @@ import { cx } from '../../../../util/cx'
 import { Meta } from '../text/Meta'
 
 export interface FooterProps {
-  appName: string
+  username: string
   timestamp: string
+  relativeTime?: string
 }
 
-export const Footer: FC<FooterProps> = ({ appName, timestamp }) => (
+export const Footer: FC<FooterProps> = ({ username, timestamp, relativeTime }) => (
   <div className={cx('flex')}>
-    <Meta {...{ appName, timestamp }} />
+    <Meta {...{ username, timestamp, relativeTime }} />
   </div>
 )

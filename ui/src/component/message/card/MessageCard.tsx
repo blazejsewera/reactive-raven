@@ -6,7 +6,6 @@ import { cx } from '../../../util/cx'
 import { Header } from './section/Header'
 import { Body } from './section/Body'
 import { Footer } from './section/Footer'
-import { Indicator } from './sprite/icon/Indicator'
 
 export interface MessageCardProps {
   message: Message
@@ -14,14 +13,13 @@ export interface MessageCardProps {
 }
 
 export const MessageCard: FC<MessageCardProps> = ({ message, intl }) => {
-  const { username: appName, userImgUri: appImgUri, title, subtitle, body, timestamp } = message
+  const { username, userImgUri: appImgUri, title, subtitle, body, timestamp, relativeTime } = message
 
   return (
     <div className={cx('rounded-3xl', 'bg-white', 'dark:bg-gray-800', 'w-80', 'p-5', 'shadow-lg', 'relative')}>
-      <Header {...{ appName, appImgUri, title, subtitle }} />
-      <Indicator />
+      <Header {...{ username, appImgUri, title, subtitle }} />
       <Body intl={intl}>{body ?? ''}</Body>
-      <Footer {...{ appName, timestamp }} />
+      <Footer {...{ username, timestamp, relativeTime }} />
     </div>
   )
 }

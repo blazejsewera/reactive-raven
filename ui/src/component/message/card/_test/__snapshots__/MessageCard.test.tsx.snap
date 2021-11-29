@@ -32,7 +32,7 @@ exports[`MessageCard component renders correctly with full message 1`] = `
           x={0.5}
           y={0.5}
         >
-          Gi
+          Pr
         </text>
       </svg>
     </div>
@@ -42,25 +42,22 @@ exports[`MessageCard component renders correctly with full message 1`] = `
       <p
         className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
       >
-        New Pull Request
+        Test title
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
-        — notipie
+        — primary
       </p>
     </div>
   </div>
-  <div
-    className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-  />
   <p
     className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
   >
     <span>
-      #12 add some new amazing functionality
+      This is a simple test message.
 
-Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and that.
+It spans over multiple lines.
     </span>
   </p>
   <div
@@ -73,7 +70,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
         — by 
-        Github
+        Primary
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -105,25 +102,22 @@ exports[`MessageCard component renders correctly with full with image message 1`
       <p
         className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
       >
-        New Pull Request
+        Test title
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
-        — notipie
+        — primary
       </p>
     </div>
   </div>
-  <div
-    className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-  />
   <p
     className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
   >
     <span>
-      #12 add some new amazing functionality
+      This is a simple test message.
 
-Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and that.
+It spans over multiple lines.
     </span>
   </p>
   <div
@@ -136,7 +130,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
         — by 
-        Github
+        Primary
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -180,7 +174,7 @@ exports[`MessageCard component renders correctly with full with very long text m
           x={0.5}
           y={0.5}
         >
-          Gi
+          Pr
         </text>
       </svg>
     </div>
@@ -190,18 +184,15 @@ exports[`MessageCard component renders correctly with full with very long text m
       <p
         className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
       >
-        New Pull Request
+        Test title
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
-        — notipie
+        — primary
       </p>
     </div>
   </div>
-  <div
-    className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-  />
   <p
     className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
   >
@@ -226,7 +217,7 @@ exports[`MessageCard component renders correctly with full with very long text m
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
         — by 
-        Github
+        Primary
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -270,7 +261,7 @@ exports[`MessageCard component renders correctly with minimal message 1`] = `
           x={0.5}
           y={0.5}
         >
-          Gi
+          Pr
         </text>
       </svg>
     </div>
@@ -280,13 +271,10 @@ exports[`MessageCard component renders correctly with minimal message 1`] = `
       <p
         className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
       >
-        New Pull Request
+        Test title
       </p>
     </div>
   </div>
-  <div
-    className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-  />
   <p
     className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
   >
@@ -304,7 +292,7 @@ exports[`MessageCard component renders correctly with minimal message 1`] = `
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
         — by 
-        Github
+        Primary
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -348,7 +336,7 @@ exports[`MessageCard component renders correctly with partial message 1`] = `
           x={0.5}
           y={0.5}
         >
-          Gi
+          Pr
         </text>
       </svg>
     </div>
@@ -358,20 +346,17 @@ exports[`MessageCard component renders correctly with partial message 1`] = `
       <p
         className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
       >
-        New Pull Request
+        Test title
       </p>
     </div>
   </div>
-  <div
-    className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-  />
   <p
     className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
   >
     <span>
-      #12 add some new amazing functionality
+      This is a simple test message.
 
-Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and that.
+It spans over multiple lines.
     </span>
   </p>
   <div
@@ -384,7 +369,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
         className="text-xs font-bold text-gray-500 dark:text-gray-400"
       >
         — by 
-        Github
+        Primary
       </p>
       <p
         className="text-xs font-bold text-gray-500 dark:text-gray-400"

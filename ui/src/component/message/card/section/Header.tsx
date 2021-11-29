@@ -6,7 +6,7 @@ import { Subtitle } from '../text/Subtitle'
 import { Title } from '../text/Title'
 
 export interface HeaderProps {
-  appName: string
+  username: string
   appImgUri?: string
   /**
    * @deprecated bgColor will be generated automatically from appName in the future,
@@ -17,9 +17,9 @@ export interface HeaderProps {
   subtitle?: string
 }
 
-export const Header: FC<HeaderProps> = ({ appName, appImgUri, bgColor, title, subtitle }) => (
+export const Header: FC<HeaderProps> = ({ username, appImgUri, bgColor, title, subtitle }) => (
   <div className={cx('flex')}>
-    <AppAvatar size="medium" {...{ appName, appImgUri, bgColor }} />
+    <AppAvatar size="medium" {...{ username, appImgUri, bgColor }} />
     <div className={cx('my-auto', 'inline-block', 'ml-5')}>
       <Title>{title}</Title>
       {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}

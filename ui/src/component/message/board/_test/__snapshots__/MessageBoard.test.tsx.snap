@@ -106,9 +106,6 @@ exports[`MessageBoard component renders correctly with messages from 2 users 1`]
             </p>
           </div>
         </div>
-        <div
-          className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-        />
         <p
           className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
         >
@@ -188,9 +185,6 @@ It spans over multiple lines.
             </p>
           </div>
         </div>
-        <div
-          className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-        />
         <p
           className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
         >
@@ -329,9 +323,6 @@ It spans over multiple lines.
             </p>
           </div>
         </div>
-        <div
-          className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-        />
         <p
           className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
         >

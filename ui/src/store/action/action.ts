@@ -4,13 +4,16 @@ import type {
   Success as MessageFetchSuccess,
   Fail as MessageFetchFail,
 } from './message/fetch'
-import { Push as MessagePush } from './message/push'
+import { Push as MessagePush, PushError as MessagePushError } from './message/push'
+import { UpdateTime as MessageUpdateTime } from './message/time'
 
 export type Action =
   | MessageFetchRequest
   | MessageFetchSuccess
   | MessageFetchFail
   | MessagePush
+  | MessagePushError
+  | MessageUpdateTime
   | DarkmodeOn
   | DarkmodeOff
   | DarkmodeToggle

@@ -1,6 +1,6 @@
 export const config: Config = {
   mode: 'dev',
-  mockAll: true,
+  mockAll: false,
 }
 
 export type Config = {

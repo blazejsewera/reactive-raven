@@ -2,7 +2,7 @@
 
 exports[`MessageContainer component renders correctly with multiple messages 1`] = `
 <div
-  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl"
+  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl "
 >
   <div
     className="flex mb-4 mx-2"
@@ -14,7 +14,7 @@ exports[`MessageContainer component renders correctly with multiple messages 1`]
     </p>
     <button
       className="inline ml-auto my-auto"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -30,10 +30,22 @@ exports[`MessageContainer component renders correctly with multiple messages 1`]
         xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
-          points="9 11 12 14 22 4"
+          points="3 6 5 6 21 6"
         />
         <path
-          d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        />
+        <line
+          x1="10"
+          x2="10"
+          y1="11"
+          y2="17"
+        />
+        <line
+          x1="14"
+          x2="14"
+          y1="11"
+          y2="17"
         />
       </svg>
     </button>
@@ -72,7 +84,7 @@ exports[`MessageContainer component renders correctly with multiple messages 1`]
               x={0.5}
               y={0.5}
             >
-              Gi
+              Pr
             </text>
           </svg>
         </div>
@@ -82,25 +94,22 @@ exports[`MessageContainer component renders correctly with multiple messages 1`]
           <p
             className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
           >
-            New Pull Request
+            Test title
           </p>
           <p
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
           >
-            — notipie
+            — primary
           </p>
         </div>
       </div>
-      <div
-        className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-      />
       <p
         className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
       >
         <span>
-          #12 add some new amazing functionality
+          This is a simple test message.
 
-Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and that.
+It spans over multiple lines.
         </span>
       </p>
       <div
@@ -113,7 +122,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
           >
             — by 
-            Github
+            Primary
           </p>
           <p
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -154,7 +163,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
               x={0.5}
               y={0.5}
             >
-              Gi
+              Pr
             </text>
           </svg>
         </div>
@@ -164,13 +173,10 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
           <p
             className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
           >
-            New Pull Request
+            Test title
           </p>
         </div>
       </div>
-      <div
-        className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-      />
       <p
         className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
       >
@@ -188,7 +194,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
           >
             — by 
-            Github
+            Primary
           </p>
           <p
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
@@ -204,7 +210,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
 
 exports[`MessageContainer component renders correctly with no messages 1`] = `
 <div
-  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl"
+  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl "
 >
   <div
     className="flex mb-4 mx-2"
@@ -216,7 +222,7 @@ exports[`MessageContainer component renders correctly with no messages 1`] = `
     </p>
     <button
       className="inline ml-auto my-auto"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -232,10 +238,22 @@ exports[`MessageContainer component renders correctly with no messages 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
-          points="9 11 12 14 22 4"
+          points="3 6 5 6 21 6"
         />
         <path
-          d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        />
+        <line
+          x1="10"
+          x2="10"
+          y1="11"
+          y2="17"
+        />
+        <line
+          x1="14"
+          x2="14"
+          y1="11"
+          y2="17"
         />
       </svg>
     </button>
@@ -248,7 +266,7 @@ exports[`MessageContainer component renders correctly with no messages 1`] = `
 
 exports[`MessageContainer component renders correctly with one message 1`] = `
 <div
-  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl"
+  className="bg-gray-100 dark:bg-gray-700 inline-block p-5 pb-6 rounded-3xl shadow-xl "
 >
   <div
     className="flex mb-4 mx-2"
@@ -260,7 +278,7 @@ exports[`MessageContainer component renders correctly with one message 1`] = `
     </p>
     <button
       className="inline ml-auto my-auto"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -276,10 +294,22 @@ exports[`MessageContainer component renders correctly with one message 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
-          points="9 11 12 14 22 4"
+          points="3 6 5 6 21 6"
         />
         <path
-          d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        />
+        <line
+          x1="10"
+          x2="10"
+          y1="11"
+          y2="17"
+        />
+        <line
+          x1="14"
+          x2="14"
+          y1="11"
+          y2="17"
         />
       </svg>
     </button>
@@ -318,7 +348,7 @@ exports[`MessageContainer component renders correctly with one message 1`] = `
               x={0.5}
               y={0.5}
             >
-              Gi
+              Pr
             </text>
           </svg>
         </div>
@@ -328,25 +358,22 @@ exports[`MessageContainer component renders correctly with one message 1`] = `
           <p
             className="text-lg font-bold mb-0 leading-5 text-gray-800 dark:text-gray-300"
           >
-            New Pull Request
+            Test title
           </p>
           <p
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
           >
-            — notipie
+            — primary
           </p>
         </div>
       </div>
-      <div
-        className="rounded-full w-2.5 h-2.5 bg-yellow-500 dark:bg-yellow-600 absolute top-4 right-4"
-      />
       <p
         className="whitespace-pre-line text-sm leading-4 my-3 text-gray-800 dark:text-gray-300"
       >
         <span>
-          #12 add some new amazing functionality
+          This is a simple test message.
 
-Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and that.
+It spans over multiple lines.
         </span>
       </p>
       <div
@@ -359,7 +386,7 @@ Closes #10. Changes both in 'core' and 'ui'. Needs additional work with this and
             className="text-xs font-bold text-gray-500 dark:text-gray-400"
           >
             — by 
-            Github
+            Primary
           </p>
           <p
             className="text-xs font-bold text-gray-500 dark:text-gray-400"

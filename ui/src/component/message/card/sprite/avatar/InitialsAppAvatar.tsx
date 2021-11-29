@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { FC } from '../../../../../type/react'
 
 export interface InitialsAppAvatarProps {
-  appName: string
+  username: string
   /**
    * @deprecated bgColor will be generated automatically from appName in the future,
    * expect this prop to be removed
@@ -10,8 +10,8 @@ export interface InitialsAppAvatarProps {
   bgColor?: string
 }
 
-export const InitialsAppAvatar: FC<InitialsAppAvatarProps> = ({ appName, bgColor }) => {
-  const backgroundColor = bgColor ? bgColor : generateBackgroundColor(appName)
+export const InitialsAppAvatar: FC<InitialsAppAvatarProps> = ({ username, bgColor }) => {
+  const backgroundColor = bgColor ?? generateBackgroundColor(username)
   const fontSize = 0.5 // svg is scaled for 1px, so it's roughly half the height
   return (
     <svg viewBox="0 0 1 1">
@@ -24,7 +24,7 @@ export const InitialsAppAvatar: FC<InitialsAppAvatarProps> = ({ appName, bgColor
         textAnchor="middle"
         dy={(fontSize * 0.356).toFixed(3)}
       >
-        {makeInitials(appName)}
+        {makeInitials(username)}
       </text>
     </svg>
   )

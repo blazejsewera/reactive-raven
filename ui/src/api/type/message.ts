@@ -6,3 +6,6 @@ export type ApiMessage = {
   body?: string
   id?: string
 }
+
+// example:
+// { "username": "Test", "timestamp": "a", "title": "Test title", "subtitle": "Test subtitle", "body": "Test body.", "id": "1234" }

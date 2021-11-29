@@ -3,16 +3,17 @@ import type { FC } from '../../../../type/react'
 import { cx } from '../../../../util/cx'
 
 export interface MetaProps {
-  appName: string
+  username: string
   timestamp: string
+  relativeTime?: string
 }
 
-export const Meta: FC<MetaProps> = ({ appName, timestamp }) => {
+export const Meta: FC<MetaProps> = ({ username, timestamp, relativeTime }) => {
   const textClasses = ['text-xs', 'font-bold', 'text-gray-500', 'dark:text-gray-400']
   return (
     <div className="inline-block">
-      <p className={cx(...textClasses)}>— by {appName}</p>
-      <p className={cx(...textClasses)}>{timestamp}</p>
+      <p className={cx(...textClasses)}>— by {username}</p>
+      <p className={cx(...textClasses)}>{relativeTime ?? timestamp}</p>
     </div>
   )
 }
