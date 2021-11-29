@@ -4,17 +4,19 @@ import type { ApiMessage } from '../../api/type/message'
 import type { Message } from '../../type/message'
 import { Action, actionPush } from '../../store/action/action'
 import { actionPushError } from '../../store/action/message/push'
+import { updateTime } from '../../util/message/time'
 
 const PUSH_ERROR_MSG = 'Error when pushing message to ui: '
 
-const toMessage = (m: ApiMessage): Message => ({
-  username: m.username,
-  timestamp: m.timestamp,
-  title: m.title,
-  subtitle: m.subtitle,
-  body: m.body,
-  id: m.id,
-})
+const toMessage = (m: ApiMessage): Message =>
+  updateTime({
+    username: m.username,
+    timestamp: m.timestamp,
+    title: m.title,
+    subtitle: m.subtitle,
+    body: m.body,
+    id: m.id,
+  })
 
 export type PushHandler = (pushUrl: string) => Observable<Action>
 export const handler: PushHandler = pushUrl =>

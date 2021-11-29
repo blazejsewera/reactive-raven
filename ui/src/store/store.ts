@@ -7,7 +7,7 @@ import { T_PUSH, T_PUSH_ERROR } from './action/message/push'
 import { merge } from '../util/message/merger'
 import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from './action/darkmode/set'
 import { T_UPDATE_TIME } from './action/message/time'
-import { updateTime } from '../util/message/time'
+import { updateTimeAll } from '../util/message/time'
 
 export type State = {
   state: 'loading' | 'ok' | 'fail'
@@ -38,7 +38,7 @@ const reducer: Reducer = (previousState = defaultState, action) => {
       console.warn(action.message)
       return { ...previousState, state: 'fail' }
     case T_UPDATE_TIME:
-      return { ...previousState, messages: updateTime(previousState.messages) }
+      return { ...previousState, messages: updateTimeAll(previousState.messages) }
     case T_DARKMODE_ON:
       return { ...previousState, isDarkMode: true }
     case T_DARKMODE_OFF:

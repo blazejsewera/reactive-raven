@@ -6,6 +6,7 @@ import { handler as mockFetchHandler } from '../mock/rx/fetch/handler'
 import { handler as pushHandler } from './push/handler'
 import { handler as mockPushHandler } from '../mock/rx/push/handler'
 import { getPushResponse$ } from './push/push.stream'
+import { getRelativeTimeUpdate$ } from './time/updateTime.stream'
 
 const deps = config.mockAll
   ? {
@@ -23,4 +24,7 @@ export const setupStreams = () => {
 
   const pushResponse$ = getPushResponse$(deps.pushHandler)
   pushResponse$.subscribe(dispatch)
+
+  const relativeTimeUpdate$ = getRelativeTimeUpdate$()
+  relativeTimeUpdate$.subscribe(dispatch)
 }

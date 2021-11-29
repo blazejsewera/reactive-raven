@@ -5,6 +5,7 @@ import type { ApiMessage } from '../../api/type/message'
 import type { Message } from '../../type/message'
 import { actionFetchFail, actionFetchSuccess } from '../../store/action/action'
 import { fromFetch as observableFromFetch } from 'rxjs/fetch'
+import { updateTimeAll } from '../../util/message/time'
 
 const SERVER_ERROR_MSG = 'Server error when fetching messages: '
 const NETWORK_ERROR_MSG = 'Error when fetching messages: '
@@ -19,7 +20,7 @@ const toMessages = (payload: ApiMessage[]): Message[] =>
     id: m.id,
   }))
 
-const toAction = (payload: ApiMessage[]): Action => actionFetchSuccess(toMessages(payload))
+const toAction = (payload: ApiMessage[]): Action => actionFetchSuccess(updateTimeAll(toMessages(payload)))
 const observableActionSuccess = (response: Response): Observable<Action> =>
   observableFrom(response.json()).pipe(map(toAction))
 

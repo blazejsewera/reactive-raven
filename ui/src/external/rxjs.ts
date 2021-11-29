@@ -1,4 +1,13 @@
-export { mergeMap, map, switchMap, catchError, of as observableOf, from as observableFrom, Observable } from 'rxjs'
+export {
+  interval,
+  mergeMap,
+  map,
+  switchMap,
+  catchError,
+  of as observableOf,
+  from as observableFrom,
+  Observable,
+} from 'rxjs'
 
 export { fromFetch as observableFromFetch } from 'rxjs/fetch'
 

@@ -22,6 +22,17 @@ describe('time formatter for relative timestamps', () => {
     const formatted = formatSince(since)
 
     // then
-    expect(formatted).toEqual('2m, 10s')
+    expect(formatted).toEqual('2m 10s ago')
+  })
+
+  it('correctly formats now', () => {
+    // given
+    const since = { s: 0, m: 0, h: 0, D: 0, W: 0, M: 0, Y: 0 }
+
+    // when
+    const formatted = formatSince(since)
+
+    // then
+    expect(formatted).toEqual('now')
   })
 })

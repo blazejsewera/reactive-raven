@@ -6,11 +6,15 @@ const periodSequence: Period[] = ['s', 'm', 'h', 'D', 'W', 'M', 'Y']
 
 export const formatSince = (since: Since): string => {
   let result = ''
-  periodSequence.reverse().forEach(period => {
-    if (since[period] <= 0) return
-    result += `${since[period]}${period}, `
-  })
-  return result.slice(0, -2)
+  periodSequence
+    .slice() // make a copy
+    .reverse()
+    .forEach(period => {
+      if (since[period] <= 0) return
+      result += `${since[period]}${period} `
+    })
+  if (result == '') return 'now'
+  return `${result.slice(0, -1)} ago`
 }
 
 export const since = (past: Date, present: Date): Since => {
@@ -33,8 +37,10 @@ const getRelativeTime = (message: Message): string | undefined => {
   const now = new Date()
   const messageTime = new Date(message.timestamp)
   if (messageTime.toString() === 'Invalid Date') return undefined
-  return `${formatSince(since(messageTime, now))} ago`
+  const s = since(messageTime, now)
+  return formatSince(s)
 }
 
-export const updateTime = (messages: Message[]): Message[] =>
-  messages.map(message => ({ ...message, relativeTime: getRelativeTime(message) }))
+export const updateTime = (message: Message): Message => ({ ...message, relativeTime: getRelativeTime(message) })
+
+export const updateTimeAll = (messages: Message[]): Message[] => messages.map(updateTime)
