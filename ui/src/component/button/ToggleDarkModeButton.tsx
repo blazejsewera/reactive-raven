@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { FC } from '../../type/react'
 import type { State } from '../../store/store'
 import { Moon, Sun } from '../../external/icon'
-import { cx } from '../../util/cx'
+import { cx } from '../../util/classname/cx'
 import { connect } from 'react-redux'
 
 export interface ToggleDarkModeButtonProps {

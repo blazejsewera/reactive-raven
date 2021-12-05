@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { FC } from '../../../../type/react'
-import { cx } from '../../../../util/cx'
+import { cx } from '../../../../util/classname/cx'
 
 export interface MetaProps {
   username: string

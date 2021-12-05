@@ -5,7 +5,7 @@ import type { State } from '../../../store/store'
 import type { MessageContainerHandlers } from '../../../type/handler'
 import type { Message } from '../../../type/message'
 import type { FC } from '../../../type/react'
-import { cx } from '../../../util/cx'
+import { cx } from '../../../util/classname/cx'
 import { byUsername } from '../../../util/message/categorizer'
 import { MessageContainer } from '../container/MessageContainer'
 

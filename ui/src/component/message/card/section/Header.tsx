@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { FC } from '../../../../type/react'
-import { cx } from '../../../../util/cx'
+import { cx } from '../../../../util/classname/cx'
 import { AppAvatar } from '../sprite/avatar/AppAvatar'
 import { Subtitle } from '../text/Subtitle'
 import { Title } from '../text/Title'

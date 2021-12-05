@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { FC } from '../../../../type/react'
 import type { Message } from '../../../../type/message'
 import type { Intl } from '../../../../i18l/intl'
-import { cx } from '../../../../util/cx'
+import { cx } from '../../../../util/classname/cx'
 import { MessageCard } from '../../card/MessageCard'
 
 export interface MessageCardListProps {

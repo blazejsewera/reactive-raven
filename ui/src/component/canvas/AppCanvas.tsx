@@ -4,10 +4,12 @@ import { dispatch } from '../../store/store'
 import { actionDarkmodeOn, actionDarkmodeOff, actionDarkmodeToggle } from '../../store/action/action'
 import type { State } from '../../store/store'
 import type { FC } from '../../type/react'
-import { cx } from '../../util/cx'
+import { cx } from '../../util/classname/cx'
 import { ToggleDarkModeButton } from '../button/ToggleDarkModeButton'
+import { ToggleClientViewButton } from '../button/ToggleClientViewButton'
 
 export interface AppCanvasProps {
+  isClient: boolean
   checkForDarkModePreference: () => void
   isDarkMode: boolean
   toggleDarkMode: () => void
@@ -17,7 +19,13 @@ export interface AppCanvasProps {
 /**
  * Default application canvas with dark mode switch button
  */
-export const AppCanvas: FC<AppCanvasProps> = ({ checkForDarkModePreference, isDarkMode, toggleDarkMode, children }) => {
+export const AppCanvas: FC<AppCanvasProps> = ({
+  isClient,
+  checkForDarkModePreference,
+  isDarkMode,
+  toggleDarkMode,
+  children,
+}) => {
   React.useEffect(() => {
     checkForDarkModePreference()
   }, [])
@@ -29,6 +37,7 @@ export const AppCanvas: FC<AppCanvasProps> = ({ checkForDarkModePreference, isDa
       </div>
       <div className={cx('fixed', 'top-5', 'right-5')}>
         <ToggleDarkModeButton onClick={toggleDarkMode} isDarkMode={isDarkMode} />
+        <ToggleClientViewButton isClient={isClient} />
       </div>
     </div>
   )

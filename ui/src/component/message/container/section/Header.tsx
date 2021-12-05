@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { FC } from '../../../../type/react'
 import { Title } from '../text/Title'
-import { cx } from '../../../../util/cx'
+import { cx } from '../../../../util/classname/cx'
 import { ClearButton } from '../sprite/button/ClearButton'
 import type { OnMessageContainerClear } from '../../../../type/handler'
 
