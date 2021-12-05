@@ -1,4 +1,4 @@
-export const DASHBOARD = '/'
-export const CLIENT = 'client'
+export const DASHBOARD = 'dashboard'
+export const CLIENT = '/'
 
 export type Location = typeof DASHBOARD | typeof CLIENT

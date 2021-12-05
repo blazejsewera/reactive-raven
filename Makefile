@@ -4,7 +4,7 @@ dev: dev-core dev-ui
 
 dev-core:
 	@cd ./core; \
-	make run
+	$(MAKE) run
 
 dev-ui:
 	@cd ./ui; \

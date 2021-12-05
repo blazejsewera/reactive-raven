@@ -35,7 +35,21 @@ export const AppCanvas: FC<AppCanvasProps> = ({
       <div className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'py-12', 'px-8', 'min-w-max')}>
         {children}
       </div>
-      <div className={cx('fixed', 'top-5', 'right-5')}>
+      <div
+        className={cx(
+          'fixed',
+          'top-5',
+          'right-5',
+          'grid',
+          'gap-3',
+          'grid-cols-1',
+          'p-3',
+          'bg-gray-100',
+          'dark:bg-gray-800',
+          'rounded-lg',
+          'shadow-lg',
+        )}
+      >
         <ToggleDarkModeButton onClick={toggleDarkMode} isDarkMode={isDarkMode} />
         <ToggleClientViewButton isClient={isClient} />
       </div>
