@@ -1,5 +1,5 @@
-import { of as observableOf, delay } from 'rxjs'
-import type { PushHandler } from '../../../rx/push/handler'
+import { observableOf, delay } from '../../../external/rxjs'
+import type { Handler } from '../../../rx/handler/handler'
 import { actionPush } from '../../../store/action/action'
 import type { Message } from '../../../type/message'
 
@@ -12,4 +12,4 @@ const message: Message = {
 
 const action = actionPush(message)
 
-export const handler: PushHandler = () => observableOf(action).pipe(delay(1500))
+export const handler: Handler = () => observableOf(action).pipe(delay(1500))

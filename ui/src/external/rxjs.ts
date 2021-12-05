@@ -1,5 +1,6 @@
 export {
   interval,
+  delay,
   mergeMap,
   map,
   switchMap,
