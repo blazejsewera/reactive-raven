@@ -1,4 +1,4 @@
-import type { Message } from '../type/message'
+import { Message } from '../type/message'
 import { fiveSentenceLoremIpsum } from './asset/text/lipsum'
 import githubIcon from './asset/icon/github-icon.svg'
 

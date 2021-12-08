@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { Columns, Edit } from '../../external/icon'
 import { CLIENT, DASHBOARD } from '../../route/route'
-import type { FC } from '../../type/react'
+import { FC } from '../../type/react'
 import { cx } from '../../util/classname/cx'
 
 export interface ToggleClientViewButtonProps {

@@ -1,7 +1,7 @@
 import { observableOf, delay } from '../../../external/rxjs'
-import type { Handler } from '../../../rx/handler/handler'
+import { Handler } from '../../../rx/handler/handler'
 import { actionPush } from '../../../store/action/action'
-import type { Message } from '../../../type/message'
+import { Message } from '../../../type/message'
 
 const message: Message = {
   username: 'Pushed',

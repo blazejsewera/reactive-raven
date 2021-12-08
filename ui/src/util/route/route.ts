@@ -1,4 +1,4 @@
-import type { Location } from '../../route/route'
+import { Location } from '../../route/route'
 
 const trimSlashes = (s: string): string => s.replace(/^\//g, '').replace(/\/$/g, '')
 

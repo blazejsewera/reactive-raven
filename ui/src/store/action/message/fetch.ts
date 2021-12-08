@@ -1,4 +1,4 @@
-import type { Message } from '../../../type/message'
+import { Message } from '../../../type/message'
 
 export const T_REQUEST = 'message/fetch/request'
 export type Request = {

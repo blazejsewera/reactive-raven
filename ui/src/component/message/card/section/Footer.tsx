@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { FC } from '../../../../type/react'
+import { FC } from '../../../../type/react'
 import { cx } from '../../../../util/classname/cx'
 import { Meta } from '../text/Meta'
 

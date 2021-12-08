@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { create as render } from 'react-test-renderer'
-import type { Message } from '../../../../type/message'
+import { Message } from '../../../../type/message'
 import { MessageCard } from '../MessageCard'
 import { intlMock } from '../../../../mock/intl.mock'
 import { full, fullWithImage, fullWithLoremIpsum, minimal, partial } from '../../../../mock/message.mock'

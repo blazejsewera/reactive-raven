@@ -1,4 +1,4 @@
-import type { MessageContainerHandlers } from '../type/handler'
+import { MessageContainerHandlers } from '../type/handler'
 
 export const handlers: MessageContainerHandlers = {
   onClear: () => {},

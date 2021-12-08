@@ -1,4 +1,4 @@
-import type { Message } from '../../../type/message'
+import { Message } from '../../../type/message'
 import { merge } from '../merger'
 
 describe('message merger to reduce duplication', () => {

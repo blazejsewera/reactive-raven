@@ -1,4 +1,4 @@
-import type { Message } from '../../../type/message'
+import { Message } from '../../../type/message'
 import { byUsername } from '../categorizer'
 
 describe('message categorizer', () => {

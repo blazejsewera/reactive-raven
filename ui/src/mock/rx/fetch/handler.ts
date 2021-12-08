@@ -1,5 +1,5 @@
 import { observableOf } from '../../../external/rxjs'
-import type { Handler } from '../../../rx/handler/handler'
+import { Handler } from '../../../rx/handler/handler'
 import { actionFetchSuccess } from '../../../store/action/action'
 import { full, fullWithImage, partial, minimal, anotherUser } from '../../message.mock'
 

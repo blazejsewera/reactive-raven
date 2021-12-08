@@ -1,11 +1,11 @@
 import * as React from 'react'
-import type { FC } from '../../../type/react'
-import type { Message } from '../../../type/message'
-import type { Intl } from '../../../i18l/intl'
+import { FC } from '../../../type/react'
+import { Message } from '../../../type/message'
+import { Intl } from '../../../i18l/intl'
 import { cx } from '../../../util/classname/cx'
 import { Header } from './section/Header'
 import { MessageCardList } from './section/MessageCardList'
-import type { MessageContainerHandlers } from '../../../type/handler'
+import { MessageContainerHandlers } from '../../../type/handler'
 
 export interface MessageContainerProps {
   title: string

@@ -1,4 +1,4 @@
-import type { Message } from '../../type/message'
+import { Message } from '../../type/message'
 
 type Period = 's' | 'm' | 'h' | 'D' | 'W' | 'M' | 'Y'
 type Since = Record<Period, number>

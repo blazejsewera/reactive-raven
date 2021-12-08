@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { create as render } from 'react-test-renderer'
-import type { Message } from '../../../../type/message'
+import { Message } from '../../../../type/message'
 import { intlMock } from '../../../../mock/intl.mock'
 import { MessageContainer } from '../MessageContainer'
 import { full, minimal } from '../../../../mock/message.mock'
-import type { MessageContainerHandlers } from '../../../../type/handler'
+import { MessageContainerHandlers } from '../../../../type/handler'
 
 describe('MessageContainer component', () => {
   // given
