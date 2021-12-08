@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { FC } from './type/react'
+import { FC } from './type/react'
 import { intl } from './i18l/intl'
 import { handlers as mockContainerHandlers } from './mock/messageContainer.mock'
 import './style/main.css'
@@ -10,10 +10,9 @@ import { Provider } from 'react-redux'
 import { AppCanvasConnected as AppCanvas } from './component/canvas/AppCanvas'
 import { setupStreams } from './rx/stream'
 import { Route, Routes, useLocation } from 'react-router'
-import { MessageCard } from './component/message/card/MessageCard'
-import { full } from './mock/message.mock'
 import { CLIENT, DASHBOARD } from './route/route'
 import { isRoute } from './util/route/route'
+import { MessageForm } from './component/message/form/MessageForm'
 
 export const App: FC = () => {
   React.useEffect(() => {
@@ -28,7 +27,7 @@ export const App: FC = () => {
       <AppCanvas isClient={isClient}>
         <Routes>
           <Route path={DASHBOARD} element={<MessageBoard intl={intl} containerHandlers={mockContainerHandlers} />} />
-          <Route path={CLIENT} element={<MessageCard intl={intl} message={full} />} />
+          <Route path={CLIENT} element={<MessageForm intl={intl} />} />
         </Routes>
       </AppCanvas>
     </Provider>
