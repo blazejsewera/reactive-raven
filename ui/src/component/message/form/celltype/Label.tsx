@@ -7,19 +7,20 @@ export interface LabelProps {
 }
 
 export const Label: FC<LabelProps> = ({ children }) => (
-  <div
+  <label
     className={cx(
       'font-bold',
       'text-left', // mobile
-      'w-100',
+      'w-full',
       'block',
       'sm:text-right', // desktop
-      'sm:w-32',
+      'sm:w-1/4',
+      'sm:h-full',
       'sm:inline-block',
       'p-2',
       'bg-gray-300',
     )}
   >
     {children}
-  </div>
+  </label>
 )

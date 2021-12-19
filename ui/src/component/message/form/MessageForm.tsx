@@ -7,6 +7,7 @@ import { Title } from './section/Title'
 import { Subtitle } from './section/Subtitle'
 import { Username } from './section/Username'
 import { IconAndControls } from './section/IconAndControls'
+import { Section } from './section/Section'
 
 export interface MessageFormProps {
   intl: Intl
@@ -14,7 +15,7 @@ export interface MessageFormProps {
 
 export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
   return (
-    <div
+    <form
       className={cx(
         'rounded-3xl',
         'bg-gray-100',
@@ -27,9 +28,10 @@ export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
     >
       <Title />
       <Subtitle />
+      <Section name="Title" />
       <Body intl={intl} />
       <Username />
       <IconAndControls />
-    </div>
+    </form>
   )
 }

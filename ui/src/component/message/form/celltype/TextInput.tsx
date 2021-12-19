@@ -11,7 +11,7 @@ export const TextInput: FC<TextInputProps> = ({ size }) => (
     className={cx(
       'font-bold',
       'text-left', // mobile
-      'w-100',
+      'w-3/4',
       'block',
       'sm:text-right', // desktop
       'sm:inline-block',
@@ -19,6 +19,6 @@ export const TextInput: FC<TextInputProps> = ({ size }) => (
       'bg-gray-100',
     )}
   >
-    <input></input>
+    <input className={cx('w-full', 'inline-block')}></input>
   </div>
 )

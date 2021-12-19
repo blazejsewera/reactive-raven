@@ -9,7 +9,7 @@ export const TextArea: FC<TextAreaProps> = ({}) => (
     className={cx(
       'font-bold',
       'text-left', // mobile
-      'w-100',
+      'w-3/4',
       'block',
       'sm:text-right', // desktop
       'sm:inline-block',
@@ -17,6 +17,6 @@ export const TextArea: FC<TextAreaProps> = ({}) => (
       'bg-gray-100',
     )}
   >
-    <input></input>
+    <textarea className={cx('w-full')}></textarea>
   </div>
 )

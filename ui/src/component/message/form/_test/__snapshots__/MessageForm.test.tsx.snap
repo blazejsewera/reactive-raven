@@ -1,0 +1,416 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageForm component renders correctly with full message 1`] = `
+<form
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    title
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    subtitle
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="flex basis-1/4"
+    htmlFor="Title-0"
+  >
+    <span
+      className="flex-1"
+    >
+      Title
+    </span>
+    <div
+      className="inline-flex flex-3"
+    >
+      <input
+        id="Title-0"
+        type="text"
+      />
+    </div>
+  </label>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    body
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <textarea
+      className="w-full"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    username
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    icon
+  </label>
+  <div
+    className="inline-block"
+  >
+    Icon and controls
+  </div>
+</form>
+`;
+
+exports[`MessageForm component renders correctly with full with image message 1`] = `
+<form
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    title
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    subtitle
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="flex basis-1/4"
+    htmlFor="Title-1"
+  >
+    <span
+      className="flex-1"
+    >
+      Title
+    </span>
+    <div
+      className="inline-flex flex-3"
+    >
+      <input
+        id="Title-1"
+        type="text"
+      />
+    </div>
+  </label>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    body
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <textarea
+      className="w-full"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    username
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    icon
+  </label>
+  <div
+    className="inline-block"
+  >
+    Icon and controls
+  </div>
+</form>
+`;
+
+exports[`MessageForm component renders correctly with full with very long text message 1`] = `
+<form
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    title
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    subtitle
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="flex basis-1/4"
+    htmlFor="Title-2"
+  >
+    <span
+      className="flex-1"
+    >
+      Title
+    </span>
+    <div
+      className="inline-flex flex-3"
+    >
+      <input
+        id="Title-2"
+        type="text"
+      />
+    </div>
+  </label>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    body
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <textarea
+      className="w-full"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    username
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    icon
+  </label>
+  <div
+    className="inline-block"
+  >
+    Icon and controls
+  </div>
+</form>
+`;
+
+exports[`MessageForm component renders correctly with minimal message 1`] = `
+<form
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    title
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    subtitle
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="flex basis-1/4"
+    htmlFor="Title-4"
+  >
+    <span
+      className="flex-1"
+    >
+      Title
+    </span>
+    <div
+      className="inline-flex flex-3"
+    >
+      <input
+        id="Title-4"
+        type="text"
+      />
+    </div>
+  </label>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    body
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <textarea
+      className="w-full"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    username
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    icon
+  </label>
+  <div
+    className="inline-block"
+  >
+    Icon and controls
+  </div>
+</form>
+`;
+
+exports[`MessageForm component renders correctly with partial message 1`] = `
+<form
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    title
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    subtitle
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="flex basis-1/4"
+    htmlFor="Title-3"
+  >
+    <span
+      className="flex-1"
+    >
+      Title
+    </span>
+    <div
+      className="inline-flex flex-3"
+    >
+      <input
+        id="Title-3"
+        type="text"
+      />
+    </div>
+  </label>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    body
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <textarea
+      className="w-full"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    username
+  </label>
+  <div
+    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+  >
+    <input
+      className="w-full inline-block"
+    />
+  </div>
+  <label
+    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+  >
+    icon
+  </label>
+  <div
+    className="inline-block"
+  >
+    Icon and controls
+  </div>
+</form>
+`;

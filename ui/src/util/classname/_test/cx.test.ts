@@ -15,4 +15,9 @@ describe('class names merge function', () => {
     const c = cx('a', 'b', 'c')
     expect(c).toEqual('a b c')
   })
+
+  it('returns space-delimited class names for mixed list and non list args', () => {
+    const c = cx(['a'], ['b', 'c', ['d', 'e']], 'f')
+    expect(c).toEqual('a b c d e f')
+  })
 })
