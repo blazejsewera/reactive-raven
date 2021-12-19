@@ -28,7 +28,8 @@ export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
     >
       <Title />
       <Subtitle />
-      <Section name="Title" />
+      <Section name="title" />
+      <Section name="body" />
       <Body intl={intl} />
       <Username />
       <IconAndControls />
