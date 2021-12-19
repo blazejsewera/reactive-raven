@@ -1,4 +1,4 @@
 export const config = {
   mode: 'dev',
-  mockAll: false,
+  mockAll: true,
 }

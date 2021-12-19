@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { FC } from '../../../type/react'
-import { Message } from '../../../type/message'
 import { Intl } from '../../../i18l/intl'
 import { cx } from '../../../util/classname/cx'
-import { Header } from './section/Header'
 import { Body } from './section/Body'
-import { Footer } from './section/Footer'
+import { Title } from './section/Title'
+import { Subtitle } from './section/Subtitle'
+import { Username } from './section/Username'
+import { IconAndControls } from './section/IconAndControls'
 
 export interface MessageFormProps {
   intl: Intl
@@ -13,10 +14,22 @@ export interface MessageFormProps {
 
 export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
   return (
-    <div className={cx('rounded-3xl', 'bg-white', 'dark:bg-gray-800', 'w-80', 'p-5', 'shadow-lg', 'relative')}>
-      <Header intl={intl} />
-      <Body intl={intl}></Body>
-      <Footer />
+    <div
+      className={cx(
+        'rounded-3xl',
+        'bg-gray-100',
+        'dark:bg-gray-700',
+        'w-128',
+        'overflow-hidden',
+        'shadow-lg',
+        'relative',
+      )}
+    >
+      <Title />
+      <Subtitle />
+      <Body intl={intl} />
+      <Username />
+      <IconAndControls />
     </div>
   )
 }
