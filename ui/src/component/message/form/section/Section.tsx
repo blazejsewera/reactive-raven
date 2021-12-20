@@ -1,41 +1,41 @@
 import * as React from 'react'
 import { FC } from '../../../../type/react'
 import { cx } from '../../../../util/classname/cx'
+import { Label, LabelPosition } from './celltype/Label'
+import { AreaTextInput } from './celltype/AreaTextInput'
+import { InlineTextInput } from './celltype/InlineTextInput'
+import { content } from './styleClass/content'
+
+export enum InputSize {
+  TEXT_LARGE,
+  TEXT_MEDIUM,
+  TEXT_AREA,
+}
 
 export interface SectionProps {
   name: string
-  inputSize?: 'text-lg' | 'text-md' | 'text-area'
+  onChange: (s: string) => void
+  id?: string
+  inputSize?: InputSize
+  labelPosition?: LabelPosition
 }
 
-let sectionId = 0
+export const Section: FC<SectionProps> = ({ name, onChange, id, inputSize, labelPosition }) => {
+  const isTextArea = inputSize === InputSize.TEXT_AREA
+  const sectionId = React.useMemo(() => sectionIdOf(name, id), [name])
 
-export const Section: FC<SectionProps> = ({ name, inputSize }) => {
-  const isTextArea = inputSize === 'text-area'
-  const id = React.useMemo(() => generateId(name, sectionId++), [name])
   return (
-    <label htmlFor={id} className={cx('flex', 'flex-row', 'w-full')}>
-      <div
-        className={cx(
-          'font-bold',
-          'text-left', // mobile
-          'w-full',
-          'sm:text-right', // desktop
-          'sm:basis-1/4',
-          'p-2',
-          'bg-gray-300',
-        )}
-      >
-        {name}
-      </div>
-      <div className={cx('basis-3/4', 'flex', 'p-2')}>
+    <label htmlFor={sectionId} className={cx('flex', 'flex-row', 'w-full')}>
+      <Label labelPosition={labelPosition}>{name}</Label>
+      <div className={cx(content)}>
         {isTextArea ? (
-          <textarea id={id} className={cx('w-full')} />
+          <AreaTextInput id={sectionId} onChange={onChange} />
         ) : (
-          <input id={id} type="text" className={cx('w-full')} />
+          <InlineTextInput size={inputSize} id={sectionId} onChange={onChange} />
         )}
       </div>
     </label>
   )
 }
 
-const generateId = (name: string, sectionId: number): string => `${name}-${sectionId}`
+const sectionIdOf = (name: string, id?: string): string => (id ? `form-${name}-${id}` : `form-${name}`)

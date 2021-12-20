@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class', // or 'media' or 'class'
@@ -24,6 +26,9 @@ module.exports = {
     extend: {
       width: {
         128: '32rem',
+      },
+      minHeight: {
+        9: defaultTheme.spacing[9],
       },
     },
   },
