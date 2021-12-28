@@ -6,7 +6,7 @@ import {
 } from './message/fetch'
 import { Push as MessagePush, PushError as MessagePushError } from './message/push'
 import { UpdateTime as MessageUpdateTime } from './message/time'
-import { FormUpdateTitle, FormUpdateSubtitle, FormUpdateBody, FormUpdateUsername } from './message/form'
+import { FormUpdateTitle, FormUpdateSubtitle, FormUpdateBody, FormUpdateUsername, FormClear } from './message/form'
 
 export type Action =
   | MessageFetchRequest
@@ -19,6 +19,7 @@ export type Action =
   | FormUpdateSubtitle
   | FormUpdateBody
   | FormUpdateUsername
+  | FormClear
   | DarkmodeOn
   | DarkmodeOff
   | DarkmodeToggle

@@ -2,17 +2,20 @@ import * as React from 'react'
 import { FC } from '../../../type/react'
 import { Intl } from '../../../i18l/intl'
 import { cx } from '../../../util/classname/cx'
-import { IconAndControlsConnected as IconAndControls } from './section/IconAndControls'
-import { InputSize, Section } from './section/Section'
-import { LabelPosition } from './section/celltype/Label'
+import { IconAndControlsConnected as IconAndControls } from './section/iconAndControls/IconAndControls'
 import { PaddingY } from './util/PaddingY'
 import { dispatch } from '../../../store/store'
 import {
+  actionFormClear,
   actionFormUpdateBody,
   actionFormUpdateSubtitle,
   actionFormUpdateTitle,
   actionFormUpdateUsername,
 } from '../../../store/action/message/form'
+import { TitleConnected as Title } from './section/title/Title'
+import { SubtitleConnected as Subtitle } from './section/subtitle/Subtitle'
+import { BodyConnected as Body } from './section/body/Body'
+import { UsernameConnected as Username } from './section/username/Username'
 
 export interface MessageFormProps {
   intl: Intl
@@ -32,11 +35,11 @@ export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
       )}
     >
       <PaddingY />
-      <Section name="title" inputSize={InputSize.TEXT_LARGE} onChange={updateTitle} />
-      <Section name="subtitle" onChange={updateSubtitle} />
-      <Section name="body" inputSize={InputSize.TEXT_AREA} labelPosition={LabelPosition.TOP} onChange={updateBody} />
-      <Section name="username" onChange={updateUsername} />
-      <IconAndControls />
+      <Title updateTitle={updateTitle} />
+      <Subtitle updateSubtitle={updateSubtitle} />
+      <Body updateBody={updateBody} />
+      <Username updateUsername={updateUsername} />
+      <IconAndControls onClear={clearForm} onSend={send} />
       <PaddingY />
     </form>
   )
@@ -54,3 +57,7 @@ const updateBody = (body: string) => {
 const updateUsername = (username: string) => {
   dispatch(actionFormUpdateUsername(username))
 }
+const clearForm = () => {
+  dispatch(actionFormClear())
+}
+const send = () => {}

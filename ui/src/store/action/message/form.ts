@@ -31,3 +31,9 @@ export const actionFormUpdateUsername = (username: string): FormUpdateUsername =
   type: T_FORM_UPDATE_USERNAME,
   username,
 })
+
+export const T_FORM_CLEAR = 'message/form/clear'
+export type FormClear = {
+  type: typeof T_FORM_CLEAR
+}
+export const actionFormClear = (): FormClear => ({ type: T_FORM_CLEAR })

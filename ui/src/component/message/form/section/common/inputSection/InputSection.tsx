@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { FC } from '../../../../type/react'
-import { cx } from '../../../../util/classname/cx'
-import { Label, LabelPosition } from './celltype/Label'
-import { AreaTextInput } from './celltype/AreaTextInput'
-import { InlineTextInput } from './celltype/InlineTextInput'
-import { content } from './styleClass/content'
+import { FC } from '../../../../../../type/react'
+import { cx } from '../../../../../../util/classname/cx'
+import { Label, LabelPosition } from './cell/Label'
+import { AreaTextInput } from './cell/AreaTextInput'
+import { InlineTextInput } from './cell/InlineTextInput'
+import { content } from '../styleClass/content'
 
 export enum InputSize {
   TEXT_LARGE,
@@ -12,15 +12,16 @@ export enum InputSize {
   TEXT_AREA,
 }
 
-export interface SectionProps {
+export interface InputSectionProps {
   name: string
   onChange: (s: string) => void
+  value?: string
   id?: string
   inputSize?: InputSize
   labelPosition?: LabelPosition
 }
 
-export const Section: FC<SectionProps> = ({ name, onChange, id, inputSize, labelPosition }) => {
+export const InputSection: FC<InputSectionProps> = ({ name, onChange, value, id, inputSize, labelPosition }) => {
   const isTextArea = inputSize === InputSize.TEXT_AREA
   const sectionId = React.useMemo(() => sectionIdOf(name, id), [name])
 
@@ -29,9 +30,9 @@ export const Section: FC<SectionProps> = ({ name, onChange, id, inputSize, label
       <Label labelPosition={labelPosition}>{name}</Label>
       <div className={cx(content)}>
         {isTextArea ? (
-          <AreaTextInput id={sectionId} onChange={onChange} />
+          <AreaTextInput {...{ id: sectionId, onChange, value }} />
         ) : (
-          <InlineTextInput size={inputSize} id={sectionId} onChange={onChange} />
+          <InlineTextInput {...{ id: sectionId, size: inputSize, onChange, value }} />
         )}
       </div>
     </label>

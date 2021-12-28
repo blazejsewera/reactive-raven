@@ -10,6 +10,7 @@ import { T_UPDATE_TIME } from './action/message/time'
 import { updateTimeAll } from '../util/message/time'
 import { config } from '../config/reactiveRaven'
 import {
+  T_FORM_CLEAR,
   T_FORM_UPDATE_BODY,
   T_FORM_UPDATE_SUBTITLE,
   T_FORM_UPDATE_TITLE,
@@ -64,6 +65,8 @@ const reducer: Reducer = (previousState = defaultState, action) => {
       return { ...previousState, messageForm: { ...previousState.messageForm, body: action.body } }
     case T_FORM_UPDATE_USERNAME:
       return { ...previousState, messageForm: { ...previousState.messageForm, username: action.username } }
+    case T_FORM_CLEAR:
+      return { ...previousState, messageForm: emptyMessage }
     case T_DARKMODE_ON:
       return { ...previousState, isDarkMode: true }
     case T_DARKMODE_OFF:
