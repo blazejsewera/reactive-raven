@@ -18,7 +18,7 @@ export const IconAndControls: FC<IconAndControlsProps> = ({ username, onClear, o
   <div className={cx('w-full', 'flex', 'flex-row')}>
     <Label>icon</Label>
     <div className={cx(content)}>
-      <AppAvatar username={username} />
+      <AppAvatar className={cx('my-auto')} username={username} />
       <Controls className={cx('ml-auto')} {...{ onClear, onSend }} />
     </div>
   </div>

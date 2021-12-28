@@ -13,6 +13,6 @@ export interface FormControlsProps {
 export const FormControls: FC<FormControlsProps> = ({ className, onClear, onSend }) => (
   <div className={cx('flex', 'flex-row', 'h-full', className ?? '')}>
     <Clear className={cx('my-auto')} onClear={onClear} />
-    <Send className={cx('my-auto')} onSend={onSend} />
+    <Send className={cx('my-auto', 'ml-4')} onSend={onSend} />
   </div>
 )
