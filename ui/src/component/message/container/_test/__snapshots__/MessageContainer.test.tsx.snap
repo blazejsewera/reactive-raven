@@ -60,13 +60,13 @@ exports[`MessageContainer component renders correctly with multiple messages 1`]
         className="flex"
       >
         <div
-          className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+          className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
         >
           <svg
             viewBox="0 0 1 1"
           >
             <rect
-              fill="#000"
+              fill="#111827"
               height={1}
               width={1}
             />
@@ -139,13 +139,13 @@ It spans over multiple lines.
         className="flex"
       >
         <div
-          className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+          className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
         >
           <svg
             viewBox="0 0 1 1"
           >
             <rect
-              fill="#000"
+              fill="#111827"
               height={1}
               width={1}
             />
@@ -324,13 +324,13 @@ exports[`MessageContainer component renders correctly with one message 1`] = `
         className="flex"
       >
         <div
-          className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+          className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
         >
           <svg
             viewBox="0 0 1 1"
           >
             <rect
-              fill="#000"
+              fill="#111827"
               height={1}
               width={1}
             />

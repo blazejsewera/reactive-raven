@@ -8,13 +8,13 @@ exports[`MessageCard component renders correctly with full message 1`] = `
     className="flex"
   >
     <div
-      className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+      className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
     >
       <svg
         viewBox="0 0 1 1"
       >
         <rect
-          fill="#000"
+          fill="#111827"
           height={1}
           width={1}
         />
@@ -90,7 +90,7 @@ exports[`MessageCard component renders correctly with full with image message 1`
     className="flex"
   >
     <div
-      className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default border dark:bg-gray-300 dark:border-gray-300"
+      className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default border dark:bg-gray-300 dark:border-gray-300"
     >
       <img
         src="test-file-stub"
@@ -150,13 +150,13 @@ exports[`MessageCard component renders correctly with full with very long text m
     className="flex"
   >
     <div
-      className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+      className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
     >
       <svg
         viewBox="0 0 1 1"
       >
         <rect
-          fill="#000"
+          fill="#111827"
           height={1}
           width={1}
         />
@@ -237,13 +237,13 @@ exports[`MessageCard component renders correctly with minimal message 1`] = `
     className="flex"
   >
     <div
-      className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+      className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
     >
       <svg
         viewBox="0 0 1 1"
       >
         <rect
-          fill="#000"
+          fill="#111827"
           height={1}
           width={1}
         />
@@ -312,13 +312,13 @@ exports[`MessageCard component renders correctly with partial message 1`] = `
     className="flex"
   >
     <div
-      className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+      className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
     >
       <svg
         viewBox="0 0 1 1"
       >
         <rect
-          fill="#000"
+          fill="#111827"
           height={1}
           width={1}
         />

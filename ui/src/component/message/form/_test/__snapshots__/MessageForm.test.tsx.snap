@@ -1,416 +1,242 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MessageForm component renders correctly with full message 1`] = `
+exports[`MessageForm component renders correctly 1`] = `
 <form
   className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
 >
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    title
-  </label>
   <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+    className="flex flex-row w-full h-2"
   >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    subtitle
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="flex basis-1/4"
-    htmlFor="Title-0"
-  >
-    <span
-      className="flex-1"
-    >
-      Title
-    </span>
     <div
-      className="inline-flex flex-3"
+      className="basis-1/4 bg-gray-300 dark:bg-gray-800"
+    />
+    <div
+      className="basis-3/4 bg-gray-100 dark:bg-gray-700"
+    />
+  </div>
+  <label
+    className="flex flex-row w-full"
+    htmlFor="form-title"
+  >
+    <div
+      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+    >
+      <span
+        className="my-auto w-full"
+      >
+        title
+      </span>
+    </div>
+    <div
+      className="w-full m-2 mr-4 basis-3/4 flex"
     >
       <input
-        id="Title-0"
+        className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2 text-xl font-bold w-full p-1"
+        id="form-title"
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </label>
   <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+    className="flex flex-row w-full"
+    htmlFor="form-subtitle"
   >
-    body
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <textarea
-      className="w-full"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    username
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    icon
-  </label>
-  <div
-    className="inline-block"
-  >
-    Icon and controls
-  </div>
-</form>
-`;
-
-exports[`MessageForm component renders correctly with full with image message 1`] = `
-<form
-  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
->
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    title
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    subtitle
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="flex basis-1/4"
-    htmlFor="Title-1"
-  >
-    <span
-      className="flex-1"
-    >
-      Title
-    </span>
     <div
-      className="inline-flex flex-3"
+      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+    >
+      <span
+        className="my-auto w-full"
+      >
+        subtitle
+      </span>
+    </div>
+    <div
+      className="w-full m-2 mr-4 basis-3/4 flex"
     >
       <input
-        id="Title-1"
+        className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2  w-full p-1"
+        id="form-subtitle"
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </label>
   <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+    className="flex flex-row w-full"
+    htmlFor="form-body"
   >
-    body
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <textarea
-      className="w-full"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    username
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    icon
-  </label>
-  <div
-    className="inline-block"
-  >
-    Icon and controls
-  </div>
-</form>
-`;
-
-exports[`MessageForm component renders correctly with full with very long text message 1`] = `
-<form
-  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
->
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    title
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    subtitle
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="flex basis-1/4"
-    htmlFor="Title-2"
-  >
-    <span
-      className="flex-1"
-    >
-      Title
-    </span>
     <div
-      className="inline-flex flex-3"
+      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
     >
-      <input
-        id="Title-2"
-        type="text"
+      <span
+        className="mb-auto mt-1 w-full"
+      >
+        body
+      </span>
+    </div>
+    <div
+      className="w-full m-2 mr-4 basis-3/4 flex"
+    >
+      <textarea
+        className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2 w-full p-1 min-h-9 max-h-48"
+        id="form-body"
+        onChange={[Function]}
+        value=""
       />
     </div>
   </label>
   <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
+    className="flex flex-row w-full"
+    htmlFor="form-username"
   >
-    body
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <textarea
-      className="w-full"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    username
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    icon
-  </label>
-  <div
-    className="inline-block"
-  >
-    Icon and controls
-  </div>
-</form>
-`;
-
-exports[`MessageForm component renders correctly with minimal message 1`] = `
-<form
-  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
->
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    title
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    subtitle
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="flex basis-1/4"
-    htmlFor="Title-4"
-  >
-    <span
-      className="flex-1"
-    >
-      Title
-    </span>
     <div
-      className="inline-flex flex-3"
+      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+    >
+      <span
+        className="my-auto w-full"
+      >
+        username
+      </span>
+    </div>
+    <div
+      className="w-full m-2 mr-4 basis-3/4 flex"
     >
       <input
-        id="Title-4"
+        className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2  w-full p-1"
+        id="form-username"
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </label>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    body
-  </label>
   <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+    className="w-full flex flex-row"
   >
-    <textarea
-      className="w-full"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    username
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    icon
-  </label>
-  <div
-    className="inline-block"
-  >
-    Icon and controls
-  </div>
-</form>
-`;
-
-exports[`MessageForm component renders correctly with partial message 1`] = `
-<form
-  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
->
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    title
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    subtitle
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <input
-      className="w-full inline-block"
-    />
-  </div>
-  <label
-    className="flex basis-1/4"
-    htmlFor="Title-3"
-  >
-    <span
-      className="flex-1"
-    >
-      Title
-    </span>
     <div
-      className="inline-flex flex-3"
+      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
     >
-      <input
-        id="Title-3"
-        type="text"
-      />
+      <span
+        className="my-auto w-full"
+      >
+        icon
+      </span>
     </div>
-  </label>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    body
-  </label>
-  <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
-  >
-    <textarea
-      className="w-full"
-    />
+    <div
+      className="w-full m-2 mr-4 basis-3/4 flex"
+    >
+      <div
+        className="my-auto h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+      >
+        <svg
+          viewBox="0 0 1 1"
+        >
+          <rect
+            fill="#111827"
+            height={1}
+            width={1}
+          />
+          <text
+            dy="0.178"
+            fill="#FFF"
+            style={
+              Object {
+                "fontFamily": "Inter",
+                "fontSize": 0.5,
+                "fontWeight": "bold",
+              }
+            }
+            textAnchor="middle"
+            x={0.5}
+            y={0.5}
+          >
+            
+          </text>
+        </svg>
+      </div>
+      <div
+        className="flex flex-row h-full ml-auto"
+      >
+        <button
+          className="my-auto"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            className="text-gray-500 dark:text-gray-400"
+            fill="none"
+            height={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="3 6 5 6 21 6"
+            />
+            <path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            />
+            <line
+              x1="10"
+              x2="10"
+              y1="11"
+              y2="17"
+            />
+            <line
+              x1="14"
+              x2="14"
+              y1="11"
+              y2="17"
+            />
+          </svg>
+        </button>
+        <button
+          className="my-auto ml-4 flex w-14 h-14 rounded-full bg-gray-700 dark:bg-gray-400"
+          onClick={[Function]}
+          type="submit"
+        >
+          <svg
+            className="text-gray-100 dark:text-gray-600 m-auto -translate-x-px translate-y-px"
+            fill="none"
+            height={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="22"
+              x2="11"
+              y1="2"
+              y2="13"
+            />
+            <polygon
+              points="22 2 15 22 11 13 2 9 22 2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    username
-  </label>
   <div
-    className="font-bold text-left w-3/4 block sm:text-right sm:inline-block p-2 bg-gray-100"
+    className="flex flex-row w-full h-2"
   >
-    <input
-      className="w-full inline-block"
+    <div
+      className="basis-1/4 bg-gray-300 dark:bg-gray-800"
     />
-  </div>
-  <label
-    className="font-bold text-left w-full block sm:text-right sm:w-1/4 sm:h-full sm:inline-block p-2 bg-gray-300"
-  >
-    icon
-  </label>
-  <div
-    className="inline-block"
-  >
-    Icon and controls
+    <div
+      className="basis-3/4 bg-gray-100 dark:bg-gray-700"
+    />
   </div>
 </form>
 `;

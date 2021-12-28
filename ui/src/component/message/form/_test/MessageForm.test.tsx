@@ -1,31 +1,19 @@
 import * as React from 'react'
 import { create as render } from 'react-test-renderer'
-import { Message } from '../../../../type/message'
 import { MessageForm } from '../MessageForm'
 import { intlMock } from '../../../../mock/intl.mock'
-import { full, fullWithImage, fullWithLoremIpsum, minimal, partial } from '../../../../mock/message.mock'
+import { Provider } from 'react-redux'
+import { store } from '../../../../store/store'
 
 describe('MessageForm component', () => {
-  // given
-  const intl = intlMock
-  const testMessageForm = (message: Message) => {
-    const tree = render(<MessageForm {...{ message, intl }} />).toJSON()
+  it('renders correctly', () => {
+    // given
+    const intl = intlMock
+    const tree = render(
+      <Provider store={store}>
+        <MessageForm intl={intl} />
+      </Provider>,
+    ).toJSON()
     expect(tree).toMatchSnapshot()
-  }
-
-  it('renders correctly with full message', () => {
-    testMessageForm(full)
-  })
-  it('renders correctly with full with image message', () => {
-    testMessageForm(fullWithImage)
-  })
-  it('renders correctly with full with very long text message', () => {
-    testMessageForm(fullWithLoremIpsum)
-  })
-  it('renders correctly with partial message', () => {
-    testMessageForm(partial)
-  })
-  it('renders correctly with minimal message', () => {
-    testMessageForm(minimal)
   })
 })

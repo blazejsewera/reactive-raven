@@ -63,13 +63,13 @@ exports[`MessageBoard component renders correctly with messages from 2 users 1`]
           className="flex"
         >
           <div
-            className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+            className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
           >
             <svg
               viewBox="0 0 1 1"
             >
               <rect
-                fill="#000"
+                fill="#111827"
                 height={1}
                 width={1}
               />
@@ -142,13 +142,13 @@ It spans over multiple lines.
           className="flex"
         >
           <div
-            className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+            className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
           >
             <svg
               viewBox="0 0 1 1"
             >
               <rect
-                fill="#000"
+                fill="#111827"
                 height={1}
                 width={1}
               />
@@ -280,13 +280,13 @@ It spans over multiple lines.
           className="flex"
         >
           <div
-            className="h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
+            className=" h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
           >
             <svg
               viewBox="0 0 1 1"
             >
               <rect
-                fill="#000"
+                fill="#111827"
                 height={1}
                 width={1}
               />
