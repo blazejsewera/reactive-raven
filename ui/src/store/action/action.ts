@@ -4,7 +4,7 @@ import {
   Success as MessageFetchSuccess,
   Fail as MessageFetchFail,
 } from './message/fetch'
-import { Push as MessagePush, PushError as MessagePushError } from './message/push'
+import { ReceivePushed as MessageReceivePushed, ReceivePushedError as MessageReceivePushedError } from './message/push'
 import { UpdateTime as MessageUpdateTime } from './message/time'
 import { FormUpdateTitle, FormUpdateSubtitle, FormUpdateBody, FormUpdateUsername, FormClear } from './message/form'
 
@@ -12,8 +12,8 @@ export type Action =
   | MessageFetchRequest
   | MessageFetchSuccess
   | MessageFetchFail
-  | MessagePush
-  | MessagePushError
+  | MessageReceivePushed
+  | MessageReceivePushedError
   | MessageUpdateTime
   | FormUpdateTitle
   | FormUpdateSubtitle
@@ -30,6 +30,6 @@ export {
   actionFail as actionFetchFail,
 } from './message/fetch'
 
-export { actionPush } from './message/push'
+export { actionReceivePushed } from './message/push'
 
 export { actionDarkmodeOn, actionDarkmodeOff, actionDarkmodeToggle } from './darkmode/set'

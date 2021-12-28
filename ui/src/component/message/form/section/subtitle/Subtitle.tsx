@@ -1,16 +1,18 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import { Intl } from '../../../../../i18l/intl'
 import { State } from '../../../../../store/store'
 import { FC } from '../../../../../type/react'
 import { InputSection } from '../common/inputSection/InputSection'
 
 interface SubtitleProps {
+  intl: Intl
   updateSubtitle: (s: string) => void
   value?: string
 }
 
-export const Subtitle: FC<SubtitleProps> = ({ updateSubtitle, value }) => (
-  <InputSection name="subtitle" onChange={updateSubtitle} value={value} />
+export const Subtitle: FC<SubtitleProps> = ({ intl, updateSubtitle, value }) => (
+  <InputSection intl={intl} name="subtitle" onChange={updateSubtitle} value={value} />
 )
 
 type StateMapper = (state: State) => Pick<SubtitleProps, 'value'>

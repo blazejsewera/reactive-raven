@@ -3,7 +3,7 @@
  * that can provide translations for page.
  */
 export interface Intl {
-  getTranslation: (text: string) => string
+  getTranslation: (text: string, translationId?: string) => string
 }
 
 export const intl: Intl = { getTranslation: text => text }

@@ -4,7 +4,8 @@ import { prod } from './prod'
 
 export type Api = {
   fetchMessages: string
-  pushMessages: string
+  pushMessage: string
+  messagesWs: string
 }
 
 export const getApi = () => (config.mode == 'dev' ? dev : prod)

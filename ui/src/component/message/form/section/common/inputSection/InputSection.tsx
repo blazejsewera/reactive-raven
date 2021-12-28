@@ -5,6 +5,7 @@ import { Label, LabelPosition } from './cell/Label'
 import { AreaTextInput } from './cell/AreaTextInput'
 import { InlineTextInput } from './cell/InlineTextInput'
 import { content } from '../styleClass/content'
+import { Intl } from '../../../../../../i18l/intl'
 
 export enum InputSize {
   TEXT_LARGE,
@@ -13,6 +14,7 @@ export enum InputSize {
 }
 
 export interface InputSectionProps {
+  intl: Intl
   name: string
   onChange: (s: string) => void
   value?: string
@@ -21,13 +23,14 @@ export interface InputSectionProps {
   labelPosition?: LabelPosition
 }
 
-export const InputSection: FC<InputSectionProps> = ({ name, onChange, value, id, inputSize, labelPosition }) => {
+export const InputSection: FC<InputSectionProps> = ({ intl, name, onChange, value, id, inputSize, labelPosition }) => {
+  const _ = intl.getTranslation
   const isTextArea = inputSize === InputSize.TEXT_AREA
   const sectionId = React.useMemo(() => sectionIdOf(name, id), [name])
 
   return (
     <label htmlFor={sectionId} className={cx('flex', 'flex-row', 'w-full')}>
-      <Label labelPosition={labelPosition}>{name}</Label>
+      <Label labelPosition={labelPosition}>{_(name)}</Label>
       <div className={cx(content)}>
         {isTextArea ? (
           <AreaTextInput {...{ id: sectionId, onChange, value }} />

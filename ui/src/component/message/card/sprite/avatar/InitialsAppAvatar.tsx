@@ -32,6 +32,6 @@ export const InitialsAppAvatar: FC<InitialsAppAvatarProps> = ({ username, bgColo
 
 // TODO: implement a color generator
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const generateBackgroundColor = (_seed: string): string => '#000'
+const generateBackgroundColor = (_seed: string): string => '#111827'
 
 const makeInitials = (name: string) => name.substr(0, 2)

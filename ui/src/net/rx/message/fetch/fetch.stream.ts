@@ -1,4 +1,4 @@
-import { getApi } from '../../../api/api'
+import { getApi } from '../../../../api/api'
 import { getMessageResponse$ } from '../message.stream'
 
 const { fetchMessages } = getApi()

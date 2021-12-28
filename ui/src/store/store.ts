@@ -3,7 +3,7 @@ import { Store } from 'redux'
 import { Action } from './action/action'
 import { Message } from '../type/message'
 import { T_FAIL, T_REQUEST, T_SUCCESS } from './action/message/fetch'
-import { T_PUSH, T_PUSH_ERROR } from './action/message/push'
+import { T_RECEIVE_PUSHED, T_RECEIVE_PUSHED_ERROR } from './action/message/push'
 import { merge } from '../util/message/merger'
 import { T_DARKMODE_OFF, T_DARKMODE_ON, T_DARKMODE_TOGGLE } from './action/darkmode/set'
 import { T_UPDATE_TIME } from './action/message/time'
@@ -50,9 +50,9 @@ const reducer: Reducer = (previousState = defaultState, action) => {
     case T_FAIL:
       console.warn(action.message)
       return { ...previousState, state: 'fail' }
-    case T_PUSH:
+    case T_RECEIVE_PUSHED:
       return { ...previousState, state: 'ok', messages: merge([...previousState.messages, action.message]) } // PERF: possible room for optimization
-    case T_PUSH_ERROR:
+    case T_RECEIVE_PUSHED_ERROR:
       console.warn(action.message)
       return { ...previousState, state: 'fail' }
     case T_UPDATE_TIME:
