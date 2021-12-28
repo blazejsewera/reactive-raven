@@ -1,7 +1,9 @@
 import { Api } from './api'
 
+const currentAddress = window.location.host ?? 'locathost:3000'
+
 export const dev: Api = {
-  fetchMessages: 'http://localhost:8080/messages',
-  pushMessage: 'http://localhost:8080/push',
-  messagesWs: 'ws://localhost:8080/ws',
+  fetchMessages: '/api/messages',
+  pushMessage: '/api/push',
+  messagesWs: `ws://${currentAddress}/api/ws`,
 }

@@ -5,7 +5,7 @@ import { handler as fetchHandler } from './message/fetch/handler'
 import { handler as mockFetchHandler } from '../../mock/net/rx/fetch/handler.mock'
 import { handler as pushedHandler } from './message/receivePushed/handler'
 import { handler as mockPushedHandler } from '../../mock/net/rx/push/handler.mock'
-import { getPushedResponse$ } from './message/receivePushed/push.stream'
+import { getPushedResponse$ } from './message/receivePushed/webSocket.stream'
 import { getRelativeTimeUpdate$ } from './time/updateTime.stream'
 
 const deps = config.mockAll
