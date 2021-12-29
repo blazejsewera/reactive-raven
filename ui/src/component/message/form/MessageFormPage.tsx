@@ -12,10 +12,20 @@ export const MessageFormPage: FC<MessageFormPageProps> = ({ intl }) => {
   const _ = intl.getTranslation
 
   return (
-    <div className={cx('flex')}>
-      <div className={cx('w-128', 'mx-auto')}>
-        <h1 className={cx('font-bold', 'text-3xl', 'text-gray-600', 'dark:text-gray-300', 'mb-5')}>
-          {_('Create a new message')}
+    <div className={cx('flex', 'w-full')}>
+      <div className={cx('w-full', 'sm:w-128', 'mx-auto')}>
+        <h1
+          className={cx(
+            'font-bold',
+            'text-3xl',
+            'text-gray-600',
+            'dark:text-gray-300',
+            'mb-5',
+            'w-full',
+            'whitespace-normal',
+          )}
+        >
+          {_('New message')}
         </h1>
         <MessageForm intl={intl} />
       </div>

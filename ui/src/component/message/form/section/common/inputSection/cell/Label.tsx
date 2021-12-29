@@ -14,8 +14,8 @@ export interface LabelProps {
 }
 
 export const Label: FC<LabelProps> = ({ children, labelPosition }) => {
-  const lightModeClasses = ['bg-gray-300', 'text-gray-800']
-  const darkModeClasses = ['dark:bg-gray-800', 'dark:text-gray-200']
+  const lightModeClasses = ['bg-gray-100', 'sm:bg-gray-300', 'text-gray-800']
+  const darkModeClasses = ['dark:bg-gray-700', 'sm:dark:bg-gray-800', 'dark:text-gray-200']
 
   const labelPositionClassMapping: Record<LabelPosition, string | string[]> = {
     [LabelPosition.TOP]: ['mb-auto', 'mt-1'],
@@ -35,9 +35,11 @@ export const Label: FC<LabelProps> = ({ children, labelPosition }) => {
         'font-bold',
         'text-left', // mobile
         'w-full',
+        'pt-2',
+        'pl-3',
         'sm:text-right', // desktop
         'sm:basis-1/4',
-        'p-2',
+        'sm:p-2',
       )}
     >
       <span className={cx(labelPositionClass, 'w-full')}>{children}</span>

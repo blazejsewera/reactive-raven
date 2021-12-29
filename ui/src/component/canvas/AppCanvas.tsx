@@ -31,7 +31,18 @@ export const AppCanvas: FC<AppCanvasProps> = ({
 
   return (
     <div className={cx('App', 'min-h-screen', isDarkMode ? 'dark' : '')}>
-      <main className={cx('bg-gray-200', 'dark:bg-gray-600', 'min-h-screen', 'py-12', 'px-8', 'min-w-max')}>
+      <main
+        className={cx(
+          'bg-gray-200',
+          'dark:bg-gray-600',
+          'min-h-screen',
+          'py-8',
+          'px-5',
+          'sm:py-12',
+          'sm:px-8',
+          isClient ? '' : 'min-w-max',
+        )}
+      >
         {children}
       </main>
       <AppControls isDarkMode={isDarkMode} isClient={isClient} onToggleDarkMode={toggleDarkMode} />

@@ -31,7 +31,10 @@ export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
         'rounded-3xl',
         'bg-gray-100',
         'dark:bg-gray-700',
-        'w-128',
+        'w-full', // mobile
+        'pt-1',
+        'sm:w-128', // desktop
+        'sm:pt-0',
         'overflow-hidden',
         'shadow-lg',
         'relative',

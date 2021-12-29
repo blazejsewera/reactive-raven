@@ -2,10 +2,10 @@
 
 exports[`MessageForm component renders correctly 1`] = `
 <form
-  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-128 overflow-hidden shadow-lg relative"
+  className="rounded-3xl bg-gray-100 dark:bg-gray-700 w-full pt-1 sm:w-128 sm:pt-0 overflow-hidden shadow-lg relative"
 >
   <div
-    className="flex flex-row w-full h-2"
+    className="hidden sm:flex flex-row w-full h-2"
   >
     <div
       className="basis-1/4 bg-gray-300 dark:bg-gray-800"
@@ -15,11 +15,11 @@ exports[`MessageForm component renders correctly 1`] = `
     />
   </div>
   <label
-    className="flex flex-row w-full"
+    className="flex sm:flex-row flex-col w-full"
     htmlFor="form-title"
   >
     <div
-      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+      className="bg-gray-100 sm:bg-gray-300 text-gray-800 dark:bg-gray-700 sm:dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full pt-2 pl-3 sm:text-right sm:basis-1/4 sm:p-2"
     >
       <span
         className="my-auto w-full"
@@ -28,7 +28,7 @@ exports[`MessageForm component renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="w-full m-2 mr-4 basis-3/4 flex"
+      className="w-full p-2 sm:p-0 sm:m-2 sm:mr-4 basis-3/4 flex"
     >
       <input
         className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2 text-xl font-bold w-full p-1"
@@ -40,11 +40,11 @@ exports[`MessageForm component renders correctly 1`] = `
     </div>
   </label>
   <label
-    className="flex flex-row w-full"
+    className="flex sm:flex-row flex-col w-full"
     htmlFor="form-subtitle"
   >
     <div
-      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+      className="bg-gray-100 sm:bg-gray-300 text-gray-800 dark:bg-gray-700 sm:dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full pt-2 pl-3 sm:text-right sm:basis-1/4 sm:p-2"
     >
       <span
         className="my-auto w-full"
@@ -53,7 +53,7 @@ exports[`MessageForm component renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="w-full m-2 mr-4 basis-3/4 flex"
+      className="w-full p-2 sm:p-0 sm:m-2 sm:mr-4 basis-3/4 flex"
     >
       <input
         className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2  w-full p-1"
@@ -65,11 +65,11 @@ exports[`MessageForm component renders correctly 1`] = `
     </div>
   </label>
   <label
-    className="flex flex-row w-full"
+    className="flex sm:flex-row flex-col w-full"
     htmlFor="form-body"
   >
     <div
-      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+      className="bg-gray-100 sm:bg-gray-300 text-gray-800 dark:bg-gray-700 sm:dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full pt-2 pl-3 sm:text-right sm:basis-1/4 sm:p-2"
     >
       <span
         className="mb-auto mt-1 w-full"
@@ -78,7 +78,7 @@ exports[`MessageForm component renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="w-full m-2 mr-4 basis-3/4 flex"
+      className="w-full p-2 sm:p-0 sm:m-2 sm:mr-4 basis-3/4 flex"
     >
       <textarea
         className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2 w-full p-1 min-h-9 max-h-48"
@@ -89,11 +89,11 @@ exports[`MessageForm component renders correctly 1`] = `
     </div>
   </label>
   <label
-    className="flex flex-row w-full"
+    className="flex sm:flex-row flex-col w-full"
     htmlFor="form-username"
   >
     <div
-      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+      className="bg-gray-100 sm:bg-gray-300 text-gray-800 dark:bg-gray-700 sm:dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full pt-2 pl-3 sm:text-right sm:basis-1/4 sm:p-2"
     >
       <span
         className="my-auto w-full"
@@ -102,7 +102,7 @@ exports[`MessageForm component renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="w-full m-2 mr-4 basis-3/4 flex"
+      className="w-full p-2 sm:p-0 sm:m-2 sm:mr-4 basis-3/4 flex"
     >
       <input
         className="outline-none active:outline-none focus:outline-none ring-0 active:ring-0 focus:ring-0 bg-white text-gray-800 border-gray-300 active:border-gray-500 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:active:border-gray-400 dark:focus:border-gray-500 w-full rounded-md border-2  w-full p-1"
@@ -114,10 +114,10 @@ exports[`MessageForm component renders correctly 1`] = `
     </div>
   </label>
   <div
-    className="w-full flex flex-row"
+    className="w-full flex flex-col sm:flex-row"
   >
     <div
-      className="bg-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full sm:text-right sm:basis-1/4 p-2"
+      className="bg-gray-100 sm:bg-gray-300 text-gray-800 dark:bg-gray-700 sm:dark:bg-gray-800 dark:text-gray-200 flex shrink-0 font-bold text-left w-full pt-2 pl-3 sm:text-right sm:basis-1/4 sm:p-2"
     >
       <span
         className="my-auto w-full"
@@ -126,7 +126,7 @@ exports[`MessageForm component renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="w-full m-2 mr-4 basis-3/4 flex"
+      className="w-full p-2 sm:p-0 sm:m-2 sm:mr-4 basis-3/4 flex"
     >
       <div
         className="my-auto h-12 w-12 rounded-full overflow-clip overflow-hidden inline-block cursor-default"
@@ -229,7 +229,7 @@ exports[`MessageForm component renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="flex flex-row w-full h-2"
+    className="hidden sm:flex flex-row w-full h-2"
   >
     <div
       className="basis-1/4 bg-gray-300 dark:bg-gray-800"

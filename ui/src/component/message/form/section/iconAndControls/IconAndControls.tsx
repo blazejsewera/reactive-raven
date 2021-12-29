@@ -20,7 +20,7 @@ export const IconAndControls: FC<IconAndControlsProps> = ({ intl, username, onCl
   const _ = intl.getTranslation
 
   return (
-    <div className={cx('w-full', 'flex', 'flex-row')}>
+    <div className={cx('w-full', 'flex', 'flex-col', 'sm:flex-row')}>
       <Label>{_('icon')}</Label>
       <div className={cx(content)}>
         <AppAvatar className={cx('my-auto')} username={username} />

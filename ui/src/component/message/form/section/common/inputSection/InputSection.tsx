@@ -29,7 +29,7 @@ export const InputSection: FC<InputSectionProps> = ({ intl, name, onChange, valu
   const sectionId = React.useMemo(() => sectionIdOf(name, id), [name])
 
   return (
-    <label htmlFor={sectionId} className={cx('flex', 'flex-row', 'w-full')}>
+    <label htmlFor={sectionId} className={cx('flex', 'sm:flex-row', 'flex-col', 'w-full')}>
       <Label labelPosition={labelPosition}>{_(name)}</Label>
       <div className={cx(content)}>
         {isTextArea ? (
