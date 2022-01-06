@@ -5,10 +5,14 @@
 package impl
 
 import (
+	"encoding/json"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/jazzsewera/reactive-raven/core/internal/domain"
 )
 
 var addr = flag.String("addr", ":8080", "http service address")
@@ -42,19 +46,28 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	message, err := ioutil.ReadAll(r.Body)
+	message_bytes, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
 		http.Error(w, "Unprocessable", http.StatusUnprocessableEntity)
 		return
 	}
-	println(string(message))
-	hub.broadcast <- message
+
+	fmt.Println(string(message_bytes))
+	message := &domain.Message{}
+	err = json.Unmarshal(message_bytes, message)
+
+	if err != nil {
+		http.Error(w, "Unprocessable", http.StatusUnprocessableEntity)
+		return
+	}
+
+	hub.broadcast <- *message
 	w.Header().Add("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusCreated)
 }
 
-func serveMessages(w http.ResponseWriter, r *http.Request) {
+func serveMessages(hub *Hub, w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/messages" {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
@@ -65,7 +78,8 @@ func serveMessages(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Add("Access-Control-Allow-Origin", "*")
 	w.Header().Add("Content-Type", "application/json")
-	http.ServeFile(w, r, "mock_messages.json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(hub.GetMessagesJson())
 }
 
 func Serve() {
@@ -79,7 +93,9 @@ func Serve() {
 	http.HandleFunc("/push", func(w http.ResponseWriter, r *http.Request) {
 		servePush(hub, w, r)
 	})
-	http.HandleFunc("/messages", serveMessages)
+	http.HandleFunc("/messages", func(w http.ResponseWriter, r *http.Request) {
+		serveMessages(hub, w, r)
+	})
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

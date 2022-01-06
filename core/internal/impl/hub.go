@@ -1,32 +1,35 @@
-// Copyright 2013 The Gorilla WebSocket Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
 package impl
 
-// Hub maintains the set of active clients and broadcasts messages to the
-// clients.
+import (
+	"encoding/json"
+	"fmt"
+
+	"github.com/jazzsewera/reactive-raven/core/internal/domain"
+)
+
 type Hub struct {
-	// Registered clients.
-	clients map[*Client]bool
-
-	// Inbound messages from the clients.
-	broadcast chan []byte
-
-	// Register requests from the clients.
-	register chan *Client
-
-	// Unregister requests from clients.
+	Messages   []domain.Message
+	clients    map[*Client]bool
+	broadcast  chan domain.Message
+	register   chan *Client
 	unregister chan *Client
 }
 
 func newHub() *Hub {
 	return &Hub{
-		broadcast:  make(chan []byte),
+		broadcast:  make(chan domain.Message),
 		register:   make(chan *Client),
 		unregister: make(chan *Client),
 		clients:    make(map[*Client]bool),
 	}
+}
+
+func (h *Hub) GetMessagesJson() []byte {
+	messages_bytes, err := json.Marshal(h.Messages)
+	if err != nil {
+		fmt.Println("could not serialize messages")
+	}
+	return messages_bytes
 }
 
 func (h *Hub) run() {
@@ -40,9 +43,14 @@ func (h *Hub) run() {
 				close(client.send)
 			}
 		case message := <-h.broadcast:
+			h.Messages = append(h.Messages, message)
+			message_bytes, err := json.Marshal(message)
+			if err != nil {
+				fmt.Printf("could not serialize message")
+			}
 			for client := range h.clients {
 				select {
-				case client.send <- message:
+				case client.send <- message_bytes:
 				default:
 					close(client.send)
 					delete(h.clients, client)

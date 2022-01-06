@@ -6,11 +6,13 @@ package impl
 
 import (
 	"bytes"
+	"encoding/json"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/gorilla/websocket"
+	"github.com/jazzsewera/reactive-raven/core/internal/domain"
 )
 
 const (
@@ -65,15 +67,24 @@ func (c *Client) readPump() {
 	c.conn.SetReadDeadline(time.Now().Add(pongWait))
 	c.conn.SetPongHandler(func(string) error { c.conn.SetReadDeadline(time.Now().Add(pongWait)); return nil })
 	for {
-		_, message, err := c.conn.ReadMessage()
+		_, message_bytes, err := c.conn.ReadMessage()
 		if err != nil {
 			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
 				log.Printf("error: %v", err)
 			}
 			break
 		}
-		message = bytes.TrimSpace(bytes.Replace(message, newline, space, -1))
-		c.hub.broadcast <- message
+		message_bytes = bytes.TrimSpace(bytes.Replace(message_bytes, newline, space, -1))
+
+		message := &domain.Message{}
+		err = json.Unmarshal(message_bytes, message)
+
+		if err != nil {
+			log.Printf("could not deserialize %s", string(message_bytes))
+			continue
+		}
+
+		c.hub.broadcast <- *message
 	}
 }
 
