@@ -1,6 +1,10 @@
 @PHONY: all
 all: clean install build copy-dist
 
+run-prod:
+	@cd dist; \
+	./rr -addr 0.0.0.0:8080
+
 run:
 	@cd dist; \
 	./rr

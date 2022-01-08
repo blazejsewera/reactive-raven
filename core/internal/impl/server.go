@@ -14,7 +14,7 @@ import (
 	"github.com/jazzsewera/reactive-raven/core/internal/domain"
 )
 
-var addr = flag.String("addr", ":8080", "http service address")
+var addr = flag.String("addr", "localhost:8080", "http service address")
 
 func serveUI(w http.ResponseWriter, r *http.Request) {
 	log.Println("serveUI: ", r.URL)
@@ -106,6 +106,7 @@ func Serve() {
 	http.HandleFunc("/api/messages", func(w http.ResponseWriter, r *http.Request) {
 		serveMessages(hub, w, r)
 	})
+	log.Printf("server is running on: %s\n", *addr)
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

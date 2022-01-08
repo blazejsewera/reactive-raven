@@ -16,6 +16,9 @@ used in my other project, [notipie](https://github.com/jazzsewera/notipie).
 ./makew run  # to run the application
 ```
 
+Use `run-prod` to start the server on `0.0.0.0:8080`, or just go to `./dist`
+(`cd ./dist`), and run `./rr -addr <address:port>`.
+
 ### Development launch
 
 You will need `make`, `go`, and `yarn` to start the whole stack. Use `./makew`
