@@ -1,6 +1,23 @@
-all: install
+@PHONY: all
+all: clean install build copy-dist
 
-build: build-ui
+run:
+	@cd dist; \
+	./rr
+
+copy-dist: clean-dist build
+	mkdir -p ./dist
+	cp -r ./ui/dist ./dist/ui
+	cp ./core/rr ./dist/rr
+
+clean: clean-dist
+	rm -f ./core/rr
+
+clean-dist:
+	rm -rf ./dist
+	rm -rf ./ui/dist
+
+build: build-core build-ui
 
 preview: dev-core preview-ui
 
@@ -32,6 +49,10 @@ install-ui:
 	@cd ./ui; \
 	yarn install
 	@echo "> done"
+
+build-core:
+	@cd ./core; \
+	$(MAKE) build
 
 build-ui:
 	@cd ./ui; \

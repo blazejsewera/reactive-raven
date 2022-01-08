@@ -7,7 +7,6 @@ package impl
 import (
 	"encoding/json"
 	"flag"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -17,9 +16,9 @@ import (
 
 var addr = flag.String("addr", ":8080", "http service address")
 
-func serveHome(w http.ResponseWriter, r *http.Request) {
-	log.Println(r.URL)
-	if r.URL.Path != "/" {
+func serveUI(w http.ResponseWriter, r *http.Request) {
+	log.Println("serveUI: ", r.URL)
+	if r.URL.Path != "/" && r.URL.Path != "/dashboard" {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
 	}
@@ -27,7 +26,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	http.ServeFile(w, r, "home.html")
+	http.ServeFile(w, r, "./ui/index.html")
 }
 
 func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
@@ -38,7 +37,7 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Connection", "keep-alive")
 		return
 	}
-	if r.URL.Path != "/push" {
+	if r.URL.Path != "/push" && r.URL.Path != "/api/push" {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
 	}
@@ -53,7 +52,7 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(string(message_bytes))
+	log.Println(string(message_bytes))
 	message := &domain.Message{}
 	err = json.Unmarshal(message_bytes, message)
 
@@ -68,7 +67,7 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 }
 
 func serveMessages(hub *Hub, w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/messages" {
+	if r.URL.Path != "/messages" && r.URL.Path != "/api/messages" {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
 	}
@@ -86,7 +85,9 @@ func Serve() {
 	flag.Parse()
 	hub := newHub()
 	go hub.run()
-	http.HandleFunc("/", serveHome)
+	uiServer := http.FileServer(http.Dir("ui"))
+	http.HandleFunc("/", uiServer.ServeHTTP)
+	http.HandleFunc("/dashboard", serveUI)
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(hub, w, r)
 	})
@@ -94,6 +95,15 @@ func Serve() {
 		servePush(hub, w, r)
 	})
 	http.HandleFunc("/messages", func(w http.ResponseWriter, r *http.Request) {
+		serveMessages(hub, w, r)
+	})
+	http.HandleFunc("/api/ws", func(w http.ResponseWriter, r *http.Request) {
+		serveWs(hub, w, r)
+	})
+	http.HandleFunc("/api/push", func(w http.ResponseWriter, r *http.Request) {
+		servePush(hub, w, r)
+	})
+	http.HandleFunc("/api/messages", func(w http.ResponseWriter, r *http.Request) {
 		serveMessages(hub, w, r)
 	})
 	err := http.ListenAndServe(*addr, nil)

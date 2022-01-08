@@ -6,12 +6,24 @@ data asynchronously to the UI.
 
 ## Starting
 
+### Quickest launch
+
+```bash
+./makew      # to build the application
+./makew run  # to run the application
+```
+
+### Development launch
+
 You will need `make`, `go`, and `yarn` to start the whole stack. Use `./makew`
 wrapper for make, as it has parallel execution set, needed for the dev servers
 to start simultaneously.
 
 Sync the dependencies with `./makew install`. Start the dev servers with
 `./makew dev`.
+
+Open the preview of the application with `./makew preview` (recommended for
+finding out if the statically-built version of ui works properly).
 
 
 ## The Why

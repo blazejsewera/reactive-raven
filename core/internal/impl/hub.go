@@ -2,7 +2,7 @@ package impl
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 
 	"github.com/jazzsewera/reactive-raven/core/internal/domain"
 )
@@ -27,8 +27,9 @@ func newHub() *Hub {
 func (h *Hub) GetMessagesJson() []byte {
 	messages_bytes, err := json.Marshal(h.Messages)
 	if err != nil {
-		fmt.Println("could not serialize messages")
+		log.Println("could not serialize messages")
 	}
+	log.Printf("pushed %d messages to ui", len(h.Messages))
 	return messages_bytes
 }
 
@@ -43,10 +44,18 @@ func (h *Hub) run() {
 				close(client.send)
 			}
 		case message := <-h.broadcast:
-			h.Messages = append(h.Messages, message)
+			is_new_message := true
+			for _, m := range h.Messages {
+				if m.Id == message.Id {
+					is_new_message = false
+				}
+			}
+			if is_new_message {
+				h.Messages = append(h.Messages, message)
+			}
 			message_bytes, err := json.Marshal(message)
 			if err != nil {
-				fmt.Printf("could not serialize message")
+				log.Printf("could not serialize message")
 			}
 			for client := range h.clients {
 				select {

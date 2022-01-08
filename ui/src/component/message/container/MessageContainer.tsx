@@ -30,7 +30,7 @@ export const MessageContainer: FC<MessageContainerProps> = ({ title, messages, h
         style ?? '',
       )}
     >
-      <Header title={title} onClear={onClear} />
+      <Header title={title} />
       <MessageCardList {...{ messages, intl }} />
     </div>
   )
