@@ -53,23 +53,25 @@ lock-in.
 
 ## The How
 
-As of 2021-11-01 I haven't studied the [ReactiveX](http://reactivex.io/)
-framework very thoroughly, but it looks promising, especially being based on
-the [Observer Pattern](https://en.wikipedia.org/wiki/Observer_pattern), which
-seems to be the right solution for the problem. When pushing the data
-asynchronously to the UI, it _feels_ natural to subscribe to the observable
-data stream from the backend, and write a simple method what to do with it. I
-don't want to manually model time, I just want to act on the data **when it
-arrives**.
+[ReactiveX](http://reactivex.io/) turned out to be the best framework for this
+specific PoC. Being based on the [Observer Pattern](https://en.wikipedia.org/wiki/Observer_pattern),
+it seemed to be the right solution for the problem. When pushing the data
+asynchronously to the UI, it _feels_ natural to subscribe to the observable data
+stream from the backend, and write a simple method what to do with it.
 
-The basic setup I want to implement will be a couple of clients pushing some
-messages to the backend, that will push the aggregated messages to one live
-dashboard, that will asynchronously update whenever a new message arrives.
+See the `./ui/src/net/rx` directory for example usages of this framework in
+the project.
+
+I don't want to manually model time, I just want to act on the data **when it arrives**.
+
+The basic setup is a couple of clients pushing some messages to the backend,
+that will push the aggregated messages to one live dashboard, that will
+asynchronously update whenever a new message arrives.
 
 ```
-Client \
-Client --> Backend --> Live Dashboard
-Client /
+Client UI \
+Client UI --> Backend --> Live Dashboard
+Client UI /
 ```
 
 
@@ -84,4 +86,4 @@ microservices are written in it.
 
 ## License
 
-The project is licensed under MIT License. Copyright 2021 Blazej Sewera
+The project is licensed under MPL-2.0 License. Copyright 2021 Blazej Sewera
