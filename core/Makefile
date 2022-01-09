@@ -6,7 +6,7 @@ build:
 	go build github.com/jazzsewera/reactive-raven/core/cmd/rr
 
 run:
-	go run github.com/jazzsewera/reactive-raven/core/cmd/rr
+	go run github.com/jazzsewera/reactive-raven/core/cmd/rr -addr :8080
 
 test:
 	go test ./...
