@@ -14,6 +14,9 @@ copy-dist: clean-dist build
 	cp -r ./ui/dist ./dist/ui
 	cp ./core/rr ./dist/rr
 
+nuke: clean
+	rm -f ./ui/src/config/reactiveRaven.ts
+
 clean: clean-dist
 	rm -f ./core/rr
 
@@ -39,7 +42,7 @@ preview-ui:
 	@cd ./ui; \
 	yarn preview
 
-install: install-core install-ui
+install: install-core install-ui copy-ui-example-config
 
 install-core:
 	@echo "> installing dependencies for core"
@@ -52,6 +55,12 @@ install-ui:
 	@echo "> installing dependencies for ui"
 	@cd ./ui; \
 	yarn install
+	@echo "> done"
+
+copy-ui-example-config:
+	@echo "> copying example configuration for ui"
+	@cd ./ui; \
+	yarn copy-example-config
 	@echo "> done"
 
 build-core:

@@ -5,7 +5,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "copy-example-config": "test -f src/config/reactiveRaven.ts || cp src/config/reactiveRaven.ts.example src/config/reactiveRaven.ts",
+    "postinstall": "copy-example-config"
   },
   "dependencies": {
     "react": "^17.0.0",

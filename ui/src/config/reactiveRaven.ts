@@ -3,4 +3,7 @@ export type Config = {
   mockAll: boolean
 }
 
-export const config: Config
+export const config: Config = {
+  mode: 'dev',
+  mockAll: false,
+}
