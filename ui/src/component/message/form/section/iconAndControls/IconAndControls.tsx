@@ -13,7 +13,7 @@ export interface IconAndControlsProps {
   intl: Intl
   username: string
   onClear: () => void
-  onSend: () => void
+  onSend: () => boolean
 }
 
 export const IconAndControls: FC<IconAndControlsProps> = ({ intl, username, onClear, onSend }) => {

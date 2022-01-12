@@ -66,12 +66,13 @@ const updateUsername = (username: string) => {
 const clearForm = () => {
   dispatch(actionFormClear())
 }
-const send = () => {
+const send = (): boolean => {
   const { messageForm } = store.getState()
   const message = addTimestamp(addId(messageForm))
 
   pushMessage(message)
   console.log('pushed')
+  return true
 }
 
 const addId = (message: Message): Message => {
