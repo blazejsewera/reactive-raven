@@ -70,3 +70,14 @@ build-core:
 build-ui:
 	@cd ./ui; \
 	yarn build
+
+test: test-core test-ui
+
+test-core:
+	@cd ./core; \
+	$(MAKE) test
+
+test-ui:
+	@cd ./ui; \
+	yarn lint && echo "> ui lint ok"; \
+	yarn test
