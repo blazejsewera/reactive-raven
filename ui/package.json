@@ -6,8 +6,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "copy-example-config": "test -f src/config/reactiveRaven.ts || cp src/config/reactiveRaven.ts.example src/config/reactiveRaven.ts",
-    "postinstall": "copy-example-config"
+    "copy-example-config": "test -f src/config/reactiveRaven.ts || cp src/config/reactiveRaven.ts.example src/config/reactiveRaven.ts"
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -34,6 +33,9 @@
     "@vitejs/plugin-react": "^1.0.0",
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.3.1",
+    "eslint": "^8.6.0",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-react": "^7.28.0",
     "jest": "^27.3.1",
     "js-md5": "^0.7.3",
     "postcss": "^8.4.5",

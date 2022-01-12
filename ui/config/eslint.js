@@ -33,10 +33,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-empty-interface': 0,
     '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
     'no-empty-function': 'off',
     'react/prop-types': 0,
+    'react/jsx-uses-react': 1,
   },
 }

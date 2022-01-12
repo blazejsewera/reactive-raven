@@ -1,5 +1,3 @@
-import { ChangeEvent } from 'react'
-
 interface TargetValueString {
   target: { value: string }
 }

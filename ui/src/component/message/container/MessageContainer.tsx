@@ -15,8 +15,7 @@ export interface MessageContainerProps {
   style?: string
 }
 
-export const MessageContainer: FC<MessageContainerProps> = ({ title, messages, handlers, intl, style }) => {
-  const { onClear } = handlers
+export const MessageContainer: FC<MessageContainerProps> = ({ title, messages, intl, style }) => {
   return (
     <div
       className={cx(

@@ -20,7 +20,7 @@ export const formatSince = (since: Since): string => {
 export const since = (past: Date, present: Date): Since => {
   const offset = Math.floor((present.getTime() - past.getTime()) / 1000)
   const lengths: Since = { s: 60, m: 60, h: 24, D: 7, W: 4.35, M: 12, Y: 10000 }
-  let result: Since = { s: 0, m: 0, h: 0, D: 0, W: 0, M: 0, Y: 0 }
+  const result: Since = { s: 0, m: 0, h: 0, D: 0, W: 0, M: 0, Y: 0 }
 
   let offsetLeft = offset
 

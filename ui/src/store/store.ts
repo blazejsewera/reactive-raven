@@ -79,9 +79,11 @@ const reducer: Reducer = (previousState = defaultState, action) => {
 }
 
 const isDev = config.mode === 'dev'
+/* eslint-disable */
 const composeEnhancers = isDev
   ? (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
   : undefined
+/* eslint-enable */
 
 export const store: Store<State, Action> = createStore(reducer, composeEnhancers)
 export const { dispatch, subscribe } = store
