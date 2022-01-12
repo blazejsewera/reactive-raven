@@ -24,7 +24,7 @@ export const Send: FC<SendProps> = ({ onSend, className }) => {
     const sendIconAnimationDuration = 200
     const checkIconAnimationDuration = 200
     const hideSendIconKeyframe = sendIconAnimationDuration
-    const showCheckIconKeyframe = 400
+    const showCheckIconKeyframe = 500
     const hideCheckIconKeyframe = 1600
     const showSendIconKeyframe = 2000
 
