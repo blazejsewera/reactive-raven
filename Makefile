@@ -67,6 +67,10 @@ build-core:
 	@cd ./core; \
 	$(MAKE) build
 
+build-core-linux:
+	@cd ./core; \
+	GOOS=linux GOARCH=amd64 $(MAKE) build
+
 build-ui:
 	@cd ./ui; \
 	yarn build
