@@ -5,7 +5,7 @@ import { Clear } from './Clear'
 import { Send } from './Send'
 
 export interface FormControlsProps {
-  onSend: () => void
+  onSend: () => boolean
   onClear: () => void
   className?: string
 }
