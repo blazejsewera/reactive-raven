@@ -89,7 +89,7 @@ export const Send: FC<SendProps> = ({ onSend, className }) => {
         'rounded-full',
         'bg-gray-700',
         'dark:bg-gray-400',
-        'overflow-clip',
+        'overflow-hidden',
       )}
       onClick={onSendPreventDefault}
     >
