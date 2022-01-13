@@ -13,6 +13,7 @@ interface Evt {
 }
 
 export const Send: FC<SendProps> = ({ onSend, className }) => {
+  const [sendAnimationMutex, setSendAnimationMutex] = React.useState(false)
   const [sendIconAnimate, setSendIconAnimate] = React.useState(false)
   const [sendIconHide, setSendIconHide] = React.useState(false)
   const [sendIconTransparent, setSendIconTransparent] = React.useState(false)
@@ -20,6 +21,8 @@ export const Send: FC<SendProps> = ({ onSend, className }) => {
   const [checkIconTransparent, setCheckIconTransparent] = React.useState(true)
 
   const sendAnimation = () => {
+    if (sendAnimationMutex) return
+
     const displayAndTransparencyDelay = 50
     const sendIconAnimationDuration = 200
     const checkIconAnimationDuration = 200
@@ -27,6 +30,8 @@ export const Send: FC<SendProps> = ({ onSend, className }) => {
     const showCheckIconKeyframe = 500
     const hideCheckIconKeyframe = 1600
     const showSendIconKeyframe = 2000
+
+    setSendAnimationMutex(true)
 
     setSendIconAnimate(true)
 
@@ -59,6 +64,10 @@ export const Send: FC<SendProps> = ({ onSend, className }) => {
     setTimeout(() => {
       setSendIconTransparent(false)
     }, showSendIconKeyframe)
+
+    setTimeout(() => {
+      setSendAnimationMutex(false)
+    }, showSendIconKeyframe + sendIconAnimationDuration)
   }
 
   const onSendPreventDefault = (e: Evt) => {
