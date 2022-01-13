@@ -1,5 +1,6 @@
 @PHONY: all
 all: clean install build copy-dist
+linux: clean build-ui build-core-linux copy-dist
 
 run-prod:
 	@cd dist; \
@@ -9,7 +10,7 @@ run:
 	@cd dist; \
 	./rr
 
-copy-dist: clean-dist build
+copy-dist: clean-dist
 	mkdir -p ./dist
 	cp -r ./ui/dist ./dist/ui
 	cp ./core/rr ./dist/rr
