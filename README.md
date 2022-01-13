@@ -12,8 +12,8 @@ used in my other project, [notipie](https://github.com/jazzsewera/notipie).
 ### Quickest launch
 
 ```bash
-./makew      # to build the application
-./makew run  # to run the application
+make      # to build the application
+make run  # to run the application
 ```
 
 Use `run-prod` to start the server on `0.0.0.0:8080`, or just go to `./dist`
@@ -25,7 +25,7 @@ You will need `make`, `go`, and `yarn` to start the whole stack. Use `./makew`
 wrapper for make, as it has parallel execution set, needed for the dev servers
 to start simultaneously.
 
-Sync the dependencies with `./makew install`. Start the dev servers with
+Sync the dependencies with `make install`. Start the dev servers with
 `./makew dev`.
 
 Open the preview of the application with `./makew preview` (recommended for
