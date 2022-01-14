@@ -25,6 +25,56 @@ export interface MessageFormProps {
 }
 
 export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
+  const [isTitleValid, setIsTitleValid] = React.useState(true)
+  const [isUsernameValid, setIsUsernameValid] = React.useState(true)
+
+  const updateTitle = (title: string) => {
+    setIsTitleValid(true)
+    dispatch(actionFormUpdateTitle(title))
+  }
+  const updateSubtitle = (subtitle: string) => {
+    dispatch(actionFormUpdateSubtitle(subtitle))
+  }
+  const updateBody = (body: string) => {
+    dispatch(actionFormUpdateBody(body))
+  }
+  const updateUsername = (username: string) => {
+    setIsUsernameValid(true)
+    dispatch(actionFormUpdateUsername(username))
+  }
+  const clearForm = () => {
+    dispatch(actionFormClear())
+  }
+
+  const send = (): boolean => {
+    const { messageForm } = store.getState()
+    const message = addTimestamp(addId(messageForm))
+    let isValid = true
+
+    if (message.title.length == 0) {
+      setIsTitleValid(false)
+      isValid = false
+    }
+
+    if (message.username.length == 0) {
+      setIsUsernameValid(false)
+      isValid = false
+    }
+
+    isValid && pushMessage(message)
+    return isValid
+  }
+
+  const addId = (message: Message): Message => {
+    const id = hash(JSON.stringify(message))
+    return { ...message, id }
+  }
+
+  const addTimestamp = (message: Message): Message => {
+    const now = new Date().toISOString()
+    return { ...message, timestamp: now }
+  }
+
   return (
     <form
       className={cx(
@@ -41,46 +91,12 @@ export const MessageForm: FC<MessageFormProps> = ({ intl }) => {
       )}
     >
       <PaddingY />
-      <Title {...{ intl, updateTitle }} />
+      <Title {...{ intl, updateTitle, valid: isTitleValid }} />
       <Subtitle {...{ intl, updateSubtitle }} />
       <Body {...{ intl, updateBody }} />
-      <Username {...{ intl, updateUsername }} />
+      <Username {...{ intl, updateUsername, valid: isUsernameValid }} />
       <IconAndControls intl={intl} onClear={clearForm} onSend={send} />
       <PaddingY />
     </form>
   )
-}
-
-const updateTitle = (title: string) => {
-  dispatch(actionFormUpdateTitle(title))
-}
-const updateSubtitle = (subtitle: string) => {
-  dispatch(actionFormUpdateSubtitle(subtitle))
-}
-const updateBody = (body: string) => {
-  dispatch(actionFormUpdateBody(body))
-}
-const updateUsername = (username: string) => {
-  dispatch(actionFormUpdateUsername(username))
-}
-const clearForm = () => {
-  dispatch(actionFormClear())
-}
-const send = (): boolean => {
-  const { messageForm } = store.getState()
-  const message = addTimestamp(addId(messageForm))
-
-  pushMessage(message)
-  console.log('pushed')
-  return true
-}
-
-const addId = (message: Message): Message => {
-  const id = hash(JSON.stringify(message))
-  return { ...message, id }
-}
-
-const addTimestamp = (message: Message): Message => {
-  const now = new Date().toISOString()
-  return { ...message, timestamp: now }
 }

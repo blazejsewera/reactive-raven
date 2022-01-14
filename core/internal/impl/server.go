@@ -48,7 +48,7 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 	message_bytes, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
-		http.Error(w, "Unprocessable", http.StatusUnprocessableEntity)
+		http.Error(w, "Cannot read request", http.StatusBadRequest)
 		return
 	}
 
@@ -57,7 +57,12 @@ func servePush(hub *Hub, w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal(message_bytes, message)
 
 	if err != nil {
-		http.Error(w, "Unprocessable", http.StatusUnprocessableEntity)
+		http.Error(w, "Cannot deserialize request", http.StatusBadRequest)
+		return
+	}
+
+	if !message.Validate() {
+		http.Error(w, "Missing Title, Username, or Timestamp", http.StatusBadRequest)
 		return
 	}
 

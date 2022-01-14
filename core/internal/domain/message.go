@@ -8,3 +8,7 @@ type Message struct {
 	Body      string `json:"body"`
 	Id        string `json:"id"`
 }
+
+func (m Message) Validate() bool {
+	return len(m.Title) > 0 && len(m.Username) > 0 && len(m.Timestamp) > 0
+}

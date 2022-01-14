@@ -8,11 +8,19 @@ import { InputSection, InputSize } from '../common/inputSection/InputSection'
 interface TitleProps {
   intl: Intl
   updateTitle: (s: string) => void
+  valid: boolean
   value?: string
 }
 
-export const Title: FC<TitleProps> = ({ intl, updateTitle, value }) => (
-  <InputSection intl={intl} name="title" inputSize={InputSize.TEXT_LARGE} onChange={updateTitle} value={value} />
+export const Title: FC<TitleProps> = ({ intl, updateTitle, valid, value }) => (
+  <InputSection
+    intl={intl}
+    name="title"
+    inputSize={InputSize.TEXT_LARGE}
+    onChange={updateTitle}
+    value={value}
+    valid={valid}
+  />
 )
 
 type StateMapper = (state: State) => Pick<TitleProps, 'value'>
