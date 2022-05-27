@@ -4,7 +4,7 @@ A Proof-of-Concept application to showcase the reactive approach of pushing
 data asynchronously to the UI.
 
 This project is mainly an experiment if this kind of reactive approach can be
-used in my other project, [notipie](https://github.com/jazzsewera/notipie).
+used in my other project, [notipie](https://github.com/blazejsewera/notipie).
 
 
 ## Starting
